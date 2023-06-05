@@ -67,6 +67,10 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 ## Tutorials
 
 - [Introduction to Azure OpenAI Service](https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/)
+- [Get started with Azure OpenAI Service](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/01-get-started-azure-openai.html)
+- [Integrate Azure OpenAI into your app](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/02-natural-language-azure-openai.html)
+- [Utilize prompt engineering in your app](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/03-prompt-engineering.html)
+- [ChatGTP Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
 
 ## Resources
 

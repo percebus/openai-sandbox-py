@@ -2,6 +2,7 @@
 
 import common
 
+
 def run():
     with open("./data/prompts/text/translate/fr-to-en.txt") as oFile:
         prompt = "\n".join(oFile.readlines())

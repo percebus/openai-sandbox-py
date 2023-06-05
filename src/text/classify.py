@@ -2,6 +2,7 @@
 
 import common
 
+
 def run():
     with open("./data/prompts/classify/sentiment.txt") as oFile:
         prompt = "\n".join(oFile.readlines())
