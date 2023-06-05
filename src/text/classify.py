@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import common_text as common
+import common
 
 
 def run():
