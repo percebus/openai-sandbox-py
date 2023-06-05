@@ -1,7 +1,8 @@
 import openai
 import os
 
-OPENAI_SECRET = os.getenv('OPENAI_SECRET')
+OPENAI_SECRET = os.getenv("OPENAI_SECRET")
+
 
 def run():
     print("Hello, World!")

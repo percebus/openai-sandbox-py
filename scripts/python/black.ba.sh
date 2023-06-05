@@ -1,1 +1,1 @@
-black ./sandbox
+black ./src
