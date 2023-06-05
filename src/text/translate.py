@@ -4,14 +4,18 @@ import common
 
 
 def run():
-    with open("./data/prompts/text/translate/fr-to-en/prompt.txt") as oFile:
-        prompt = "\n".join(oFile.readlines())
+    with open("./data/prompting/text/translate/en/samples/hello.txt") as oFile:
+        text = "\n".join(oFile.readlines())
 
+    with open("./data/prompting/text/translate/en/to/fr/prompt.txt") as oFile:
+        template = "\n".join(oFile.readlines())
+
+    prompt = template.format(text=text)
     print("Prompt:")
     common.oPrettyPrinter.pprint(prompt)
 
     response = common.query(prompt)
-    print(response)
+    common.oPrettyPrinter.pprint(response)
     # {
     #     "choices": [
     #     {

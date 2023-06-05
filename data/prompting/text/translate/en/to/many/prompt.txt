@@ -1,0 +1,2 @@
+Translate the following text to French and Spanish and English pirate:
+```{text}```

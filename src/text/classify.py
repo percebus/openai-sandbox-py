@@ -4,7 +4,7 @@ import common
 
 
 def run():
-    with open("./data/prompts/classify/Sentiment/prompt.txt") as oFile:
+    with open("./data/prompting/text/inferring/sentiment/Tweet/prompt.txt") as oFile:
         prompt = "\n".join(oFile.readlines())
 
     print("Prompt:")

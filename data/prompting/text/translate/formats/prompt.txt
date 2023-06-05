@@ -1,0 +1,1 @@
+Translate the following python dictionary from JSON to an HTML table with column headers and title: {data_json}
