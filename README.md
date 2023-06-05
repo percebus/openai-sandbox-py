@@ -64,6 +64,31 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 | Picking up where you left off                      | One way to grow tomatoes                | is to plant seeds.                                                                                                            |
 | Giving factual responses                           | How many moons does Earth have?         | One                                                                                                                           |
 
+#### Principles
+
+##### Write clear and specific instructions
+
+1. Use delimeters
+  - `"""`
+  - `````
+  - `---`
+  - `<` `>`
+  - `<tag>`XML`</tag>`
+
+2. Ask for structured ouptut:
+  - HTML
+  - JSON
+
+3. Check
+  - Wether conditions are satisfied.
+  - Assumptions required to do the ask.
+
+4. Few-shot prompting.
+
+##### Give the model time to "think"
+
+1. Specify the steps required to complete a task
+
 ## Tutorials
 
 - [Introduction to Azure OpenAI Service](https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/)
