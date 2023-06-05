@@ -4,9 +4,13 @@ import common
 
 
 def run():
-    with open("./data/prompting/text/inferring/sentiment/Tweet/prompt.txt") as oFile:
-        prompt = "\n".join(oFile.readlines())
+    with open("./data/prompting/text/inferring/sentiment/Tweet/samples/trip.txt") as oFile:
+        text = "\n".join(oFile.readlines())
 
+    with open("./data/prompting/text/inferring/sentiment/Tweet/prompt.txt") as oFile:
+        template = "\n".join(oFile.readlines())
+
+    prompt = template.format(text=text)
     print("Prompt:")
     common.oPrettyPrinter.pprint(prompt)
 
