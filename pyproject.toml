@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "openai-sandbox-py"
+version = "0.1.0"
+description = ""
+authors = ["Juan Guerrero <JCystems@gMail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.27.7"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
