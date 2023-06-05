@@ -1,0 +1,7 @@
+Determine whether each item in the following list of topics is a topic in the text below, whic is delimited with triple backticks.
+
+Give your answer as list with 0 or 1 for each topic.
+
+List of topics: {", ".join(topic_list)}
+
+Text sample: '''{story}'''

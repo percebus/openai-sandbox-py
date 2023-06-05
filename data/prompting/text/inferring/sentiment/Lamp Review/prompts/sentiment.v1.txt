@@ -1,0 +1,4 @@
+What is the sentiment of the following product review,
+which is delimited with triple backticks?
+
+Review text: '''{lamp_review}'''

@@ -1,4 +1,0 @@
-Classify Text
-
-Tweet: I enjoyed the trip.
-Sentiment:
