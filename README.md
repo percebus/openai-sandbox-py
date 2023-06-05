@@ -11,6 +11,10 @@ Usage of Azure OpenAI should follow the six Microsoft [AI principles](https://le
 - Accountability: People must be accountable for how AI systems operate.
 - Transparency: AI systems should have explanations so users can understand how they're built and used.
 
+## Tokens
+
+One token is roughly four characters for typical English text.
+
 ## Models
 
 In the [Azure OpenAI Studio](https://oai.azure.com/portal), you can build AI models and deploy them for public consumption in software applications. Azure OpenAI's capabilities are made possible by specific generative AI models. Different models are optimized for different tasks; some models excel at summarization and providing general unstructured responses, and others are built to generate code or unique images from text input.

@@ -1,0 +1,6 @@
+There are three main types of artificial intelligence:
+Narrow or Weak AI (such as virtual assistants like Siri or Alexa, image recognition software, and spam filters),
+General or Strong AI (AI designed to be as intelligent as a human being.
+
+This type of AI does not currently exist and is purely theoretical), and Artificial Superintelligence (AI that is more intelligent than any human being and can perform tasks that are beyond human comprehension.
+This type of AI is also purely theoretical and has not yet been developed).

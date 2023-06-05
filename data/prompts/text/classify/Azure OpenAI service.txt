@@ -1,0 +1,5 @@
+news article:
+Microsoft releases Azure OpenAI service.
+Microsoft corporation has released an Azure service that makes OpenAI models available for application developers building apps and services in the Azure cloud.
+
+Classified category:

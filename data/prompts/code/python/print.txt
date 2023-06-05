@@ -1,0 +1,5 @@
+# Python 3
+
+# Create a function to print “Hello “ and a specified string
+
+def print_hello(s):
