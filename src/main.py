@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
 import openai
 import os
 
-OPENAI_SECRET = os.getenv("OPENAI_SECRET")
+OPENAI_SECRET = os.getenv("OPENAI_API_KEY")
 
 
 def run():

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+export AZ_SUBSCRIPTION_ID=FIXME
+export AZ_REGION_NAME="eastus"
+export AZ_RESOURCE_GROUP_NAME=FIXME
+export AZ_OPENAI_NAME=FIXME
+export AZ_OPENAI_KIND="OpenAI"
+export AZ_OPENAI_SKU="s0"
+export AZ_OPENAI_DEPLOYMENT_NAME=FIXME
+export AZ_OPENAI_MODEL_NAME="text-embedding-ada-002"
+export AZ_OPENAI_MODEL_VERSION="2"
+export AZ_OPENAI_MODEL_FORMAT="OpenAI"
+export AZ_OPENAI_SCALING="Standard"
+export OPENAI_API_KEY=FIXME

@@ -1,5 +1,16 @@
 # Hello OpenAI
 
+## Responsible AI
+
+Usage of Azure OpenAI should follow the six Microsoft [AI principles](https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai):
+
+- Fairness: AI systems shouldn't make decisions that discriminate against or support bias of a group or individual.
+- Reliability and Safety: AI systems should respond safely to new situations and potential manipulation.
+- Privacy and Security: AI systems should be secure and respect data privacy.
+- Inclusiveness: AI systems should empower everyone and engage people.
+- Accountability: People must be accountable for how AI systems operate.
+- Transparency: AI systems should have explanations so users can understand how they're built and used.
+
 ## Models
 
 In the [Azure OpenAI Studio](https://oai.azure.com/portal), you can build AI models and deploy them for public consumption in software applications. Azure OpenAI's capabilities are made possible by specific generative AI models. Different models are optimized for different tasks; some models excel at summarization and providing general unstructured responses, and others are built to generate code or unique images from text input.
@@ -32,6 +43,22 @@ GPT models are great at completing several natural language tasks, some of which
 | Translation                 | "Translate 'How are you' to French"      |
 | Answering questions         | "What does Azure OpenAI do?"             |
 | Suggesting content          | "Give me the five best weddings songs"   |
+
+#### Prompts
+
+Prompts can be grouped into types of requests based on task.
+
+Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/prompt-engineering?portal=true).
+
+| Task type                                          | Prompt example                          | Completion example                                                                                                            |
+| -------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Classifying content                                | Tweet: I enjoyed the trip. Sentiment:   | Positive                                                                                                                      |
+| Generating new content                             | List ways of traveling                  | 1. Bike 2. Car ...                                                                                                            |
+| Holding a conversation                             | A friendly AI assistant                 | [See examples](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/completions#conversation?portal=true) |
+| Transformation (translation and symbol conversion) | English: Hello, French:                 | bonjour                                                                                                                       |
+| Summarizing content                                | Provide a summary of the content {text} | The content shares methods of machine learning.                                                                               |
+| Picking up where you left off                      | One way to grow tomatoes                | is to plant seeds.                                                                                                            |
+| Giving factual responses                           | How many moons does Earth have?         | One                                                                                                                           |
 
 ## Tutorials
 
