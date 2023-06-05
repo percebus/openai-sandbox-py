@@ -4,7 +4,7 @@ import common_text as common
 
 
 def run():
-    with open("./data/prompts/classify/sentiment.txt") as oFile:
+    with open("./data/prompts/classify/Sentiment/prompt.txt") as oFile:
         prompt = "\n".join(oFile.readlines())
 
     print("Prompt:")

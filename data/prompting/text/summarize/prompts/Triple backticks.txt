@@ -1,0 +1,4 @@
+Summarize the text delimited by triple backticks
+into a single sentence.
+
+```{text}```

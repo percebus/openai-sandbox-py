@@ -4,7 +4,7 @@ import common_text as common
 
 
 def run():
-    with open("./data/prompts/text/translate/fr-to-en.txt") as oFile:
+    with open("./data/prompts/text/translate/fr-to-en/prompt.txt") as oFile:
         prompt = "\n".join(oFile.readlines())
 
     print("Prompt:")
