@@ -64,30 +64,37 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 | Picking up where you left off                      | One way to grow tomatoes                | is to plant seeds.                                                                                                            |
 | Giving factual responses                           | How many moons does Earth have?         | One                                                                                                                           |
 
-#### Principles
+#### Prompting Principles
 
 ##### Write clear and specific instructions
 
-1. Use delimeters
+- Use delimeters
+
   - `"""`
-  - `````
+  - 3x `
   - `---`
   - `<` `>`
   - `<tag>`XML`</tag>`
 
-2. Ask for structured ouptut:
+- Ask for structured ouptut:
+
   - HTML
   - JSON
 
-3. Check
+- Check
+
   - Wether conditions are satisfied.
   - Assumptions required to do the ask.
 
-4. Few-shot prompting.
+- Few-shot prompting.
 
 ##### Give the model time to "think"
 
-1. Specify the steps required to complete a task
+- Specify the steps required to complete a task.
+- Instruct the model to work out its own solution before rushing to a conclusion.
+- Reduce hallucinations.
+  - First find relevant information.
+  - Answer the question based on relevant information.
 
 ## Tutorials
 
