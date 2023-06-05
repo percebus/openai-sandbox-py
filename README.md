@@ -37,6 +37,8 @@ Generative pre-trained transformer (GPT) models are excellent at both understand
 What does a response from a GPT model look like?
 A key aspect of OpenAI's generative AI is that it takes an input, or prompt, to return a natural language, visual, or code response. GPT tries to infer, or guess, the context of the user's question based on the prompt.
 
+#### Prompts
+
 GPT models are great at completing several natural language tasks, some of which include:
 
 | Task                        | Prompt                                   |
@@ -47,8 +49,6 @@ GPT models are great at completing several natural language tasks, some of which
 | Translation                 | "Translate 'How are you' to French"      |
 | Answering questions         | "What does Azure OpenAI do?"             |
 | Suggesting content          | "Give me the five best weddings songs"   |
-
-#### Prompts
 
 Prompts can be grouped into types of requests based on task.
 
