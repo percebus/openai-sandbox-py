@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 
 import common
+from dotenv import dotenv_values
+
+config = {
+    **dotenv_values(".env.az.openai.text-curie"),
+    **dotenv_values(".env.openai.api"),
+    **dotenv_values(".env.openai.params"),
+}
+
+query = common.create_query(config)
 
 
 def run():
@@ -14,7 +23,7 @@ def run():
     print("Prompt:")
     common.oPrettyPrinter.pprint(prompt)
 
-    response = common.query(prompt)
+    response = query(prompt)
     common.oPrettyPrinter.pprint(response)
     # {
     #     "choices": [
