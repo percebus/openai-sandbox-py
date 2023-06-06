@@ -15,10 +15,10 @@ query = common.create_query(config)
 def run():
     folder = "./data/prompting/text/inferring/sentiment/Tweet"
     with open(f"{folder}/samples/trip.txt") as oFile:
-        text = "\n".join(oFile.readlines())
+        text = oFile.read()
 
     with open(f"{folder}/prompt.txt") as oFile:
-        template = "\n".join(oFile.readlines())
+        template = oFile.read()
 
     prompt = template.format(text=text)
     print("Prompt:")
