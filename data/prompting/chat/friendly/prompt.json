@@ -1,4 +1,4 @@
 [
-  { "role": "system", "content": "You are friendly chatbot." },
-  { "role": "user", "content": "Hi, my name is Isa" }
+  { "role": "system", "content": "{system}" },
+  { "role": "user", "content": "{sample}" }
 ]
