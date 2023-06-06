@@ -1,3 +1,7 @@
 {
-    "resturant employees": [{"name": "Shyam"}, {"name": "Bob"}, {"name": "Jai"}]
+  "resturant employees": [
+    { "name": "Shyam" },
+    { "name": "Bob" },
+    { "name": "Jai" }
+  ]
 }
