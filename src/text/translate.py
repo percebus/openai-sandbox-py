@@ -13,10 +13,11 @@ query = common.create_query(config)
 
 
 def run():
-    with open("./data/prompting/text/translate/en/samples/hello.txt") as oFile:
+    folder = "./data/prompting/text/translate/en"
+    with open(f"{folder}/samples/hello.txt") as oFile:
         text = "\n".join(oFile.readlines())
 
-    with open("./data/prompting/text/translate/en/to/fr/prompt.txt") as oFile:
+    with open(f"{folder}/to/fr/prompt.txt") as oFile:
         template = "\n".join(oFile.readlines())
 
     prompt = template.format(text=text)

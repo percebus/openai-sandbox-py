@@ -13,12 +13,11 @@ query = common.create_query(config)
 
 
 def run():
-    with open(
-        "./data/prompting/text/inferring/sentiment/Tweet/samples/trip.txt"
-    ) as oFile:
+    folder = "./data/prompting/text/inferring/sentiment/Tweet"
+    with open(f"{folder}/samples/trip.txt") as oFile:
         text = "\n".join(oFile.readlines())
 
-    with open("./data/prompting/text/inferring/sentiment/Tweet/prompt.txt") as oFile:
+    with open(f"{folder}/prompt.txt") as oFile:
         template = "\n".join(oFile.readlines())
 
     prompt = template.format(text=text)
