@@ -6,13 +6,14 @@ oPrettyPrinter = pprint.PrettyPrinter(indent=3)
 pprint = oPrettyPrinter.pprint
 
 transformers = {
-    'OPENAI_COMPLETION_TEMPERATURE': float,
-    'OPENAI_COMPLETION_MAX_TOKENS': int,
-    'OPENAI_COMPLETION_TOP_P': float,
-    'OPENAI_COMPLETION_PENALTY_FREQUENCY': float,
-    'OPENAI_COMPLETION_PENALTY_PRESENCE': float,
-    'OPENAI_COMPLETION_BEST_OF': int
+    "OPENAI_COMPLETION_TEMPERATURE": float,
+    "OPENAI_COMPLETION_MAX_TOKENS": int,
+    "OPENAI_COMPLETION_TOP_P": float,
+    "OPENAI_COMPLETION_PENALTY_FREQUENCY": float,
+    "OPENAI_COMPLETION_PENALTY_PRESENCE": float,
+    "OPENAI_COMPLETION_BEST_OF": int,
 }
+
 
 def create_query(config):
     def get_env_value(key):
