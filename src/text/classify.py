@@ -4,9 +4,9 @@ import common
 from dotenv import dotenv_values
 
 config = {
-    **dotenv_values(".env.az.openai.text-curie"),
     **dotenv_values(".env.openai.api"),
     **dotenv_values(".env.openai.params"),
+    **dotenv_values(".env.az.openai.text-curie"),
 }
 
 query = common.create_query(config)
@@ -23,9 +23,9 @@ def run():
 
     prompt = template.format(text=text)
     print("Prompt:")
-    common.oPrettyPrinter.pprint(prompt)
+    common.pprint(prompt)
 
-    response = common.query(prompt)
+    response = query(prompt)
     print(response)
     # {
     #   "choices": [

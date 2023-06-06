@@ -3,59 +3,55 @@ import pprint
 
 oPrettyPrinter = pprint.PrettyPrinter(indent=3)
 
+pprint = oPrettyPrinter.pprint
+
+transformers = {
+    'OPENAI_COMPLETION_TEMPERATURE': float,
+    'OPENAI_COMPLETION_MAX_TOKENS': int,
+    'OPENAI_COMPLETION_TOP_P': float,
+    'OPENAI_COMPLETION_PENALTY_FREQUENCY': float,
+    'OPENAI_COMPLETION_PENALTY_PRESENCE': float,
+    'OPENAI_COMPLETION_BEST_OF': int
+}
+
 def create_query(config):
+    def get_env_value(key):
+        value = config.get(key)
+        if value is None:
+            return None
+
+        fn = transformers.get(key)
+        return fn(value) if fn else value
+
     openai.api_type = config["OPENAI_API_TYPE"]
     openai.api_base = config["OPENAI_API_URL_BASE"]
     openai.api_version = config["OPENAI_API_VERSION"]
     openai.api_key = config["OPENAI_API_KEY"]
 
     AZ_OPENAI_DEPLOYMENT_NAME = config["AZ_OPENAI_DEPLOYMENT_NAME"]
-    OPENAI_COMPLETION_TEMPERATURE = config.get("OPENAI_COMPLETION_TEMPERATURE")
-    OPENAI_COMPLETION_MAX_TOKENS = config.get("OPENAI_COMPLETION_MAX_TOKENS")
-    OPENAI_COMPLETION_TOP_P = config.get("OPENAI_COMPLETION_TOP_P")
-    OPENAI_COMPLETION_PENALTY_FREQUENCY = config.get("OPENAI_COMPLETION_PENALTY_FREQUENCY")
-    OPENAI_COMPLETION_PENALTY_PRESENCE = config.get("OPENAI_COMPLETION_PENALTY_PRESENCE")
-    OPENAI_COMPLETION_BEST_OF = config.get("OPENAI_COMPLETION_BEST_OF")
-    OPENAI_COMPLETION_STOP = config.get("OPENAI_COMPLETION_STOP")
-
-    temperature = (
-        int(OPENAI_COMPLETION_TEMPERATURE)
-        if OPENAI_COMPLETION_TEMPERATURE is not None
-        else None
+    OPENAI_COMPLETION_TEMPERATURE = get_env_value("OPENAI_COMPLETION_TEMPERATURE")
+    OPENAI_COMPLETION_MAX_TOKENS = get_env_value("OPENAI_COMPLETION_MAX_TOKENS")
+    OPENAI_COMPLETION_TOP_P = get_env_value("OPENAI_COMPLETION_TOP_P")
+    OPENAI_COMPLETION_PENALTY_FREQUENCY = get_env_value(
+        "OPENAI_COMPLETION_PENALTY_FREQUENCY"
     )
-    max_tokens = (
-        int(OPENAI_COMPLETION_MAX_TOKENS)
-        if OPENAI_COMPLETION_MAX_TOKENS is not None
-        else None
+    OPENAI_COMPLETION_PENALTY_PRESENCE = get_env_value(
+        "OPENAI_COMPLETION_PENALTY_PRESENCE"
     )
-    top_p = int(OPENAI_COMPLETION_TOP_P) if OPENAI_COMPLETION_TOP_P is not None else None
-    frequency_penalty = (
-        int(OPENAI_COMPLETION_PENALTY_FREQUENCY)
-        if OPENAI_COMPLETION_PENALTY_FREQUENCY is not None
-        else None
-    )
-    presence_penalty = (
-        int(OPENAI_COMPLETION_PENALTY_PRESENCE)
-        if OPENAI_COMPLETION_PENALTY_PRESENCE is not None
-        else None
-    )
-    best_of = (
-        int(OPENAI_COMPLETION_BEST_OF) if OPENAI_COMPLETION_BEST_OF is not None else None
-    )
-    stop = OPENAI_COMPLETION_STOP.split(",") if OPENAI_COMPLETION_STOP is not None else None
-
+    OPENAI_COMPLETION_BEST_OF = get_env_value("OPENAI_COMPLETION_BEST_OF")
+    OPENAI_COMPLETION_STOP = get_env_value("OPENAI_COMPLETION_STOP")
 
     def query(prompt):
         kwargs = {
             "prompt": prompt,
             "engine": AZ_OPENAI_DEPLOYMENT_NAME,
-            "temperature": temperature,
-            "max_tokens": max_tokens,
-            "top_p": top_p,
-            "frequency_penalty": frequency_penalty,
-            "presence_penalty": presence_penalty,
-            "best_of": best_of,
-            "stop": stop,
+            "temperature": OPENAI_COMPLETION_TEMPERATURE,
+            "max_tokens": OPENAI_COMPLETION_MAX_TOKENS,
+            "top_p": OPENAI_COMPLETION_TOP_P,
+            "frequency_penalty": OPENAI_COMPLETION_PENALTY_FREQUENCY,
+            "presence_penalty": OPENAI_COMPLETION_PENALTY_PRESENCE,
+            "best_of": OPENAI_COMPLETION_BEST_OF,
+            "stop": OPENAI_COMPLETION_STOP,
         }
         oPrettyPrinter.pprint(kwargs)
         return openai.Completion.create(**kwargs)
