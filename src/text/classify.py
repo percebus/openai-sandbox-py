@@ -4,7 +4,9 @@ import common
 
 
 def run():
-    with open("./data/prompting/text/inferring/sentiment/Tweet/samples/trip.txt") as oFile:
+    with open(
+        "./data/prompting/text/inferring/sentiment/Tweet/samples/trip.txt"
+    ) as oFile:
         text = "\n".join(oFile.readlines())
 
     with open("./data/prompting/text/inferring/sentiment/Tweet/prompt.txt") as oFile:
