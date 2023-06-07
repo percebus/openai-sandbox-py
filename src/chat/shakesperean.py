@@ -33,7 +33,8 @@ def run():
     print(response)
 
     choice = api.get_first_choice(response)
-    print(choice.content)
+    answer = choice.message.content
+    print(answer)
 
 
 if __name__ == "__main__":

@@ -9,7 +9,6 @@ def config_openai(config):
     openai.api_version = config["OPENAI_API_VERSION"]
     openai.api_key = config["OPENAI_API_KEY"]
 
-
 def create_query(config):
     params = {
         "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
@@ -35,9 +34,13 @@ def create_query(config):
 
 def create_chat(config):
     params = {
-        "model": config["AZ_OPENAI_MODEL_NAME"],
-        "deployment_id": config["AZ_OPENAI_DEPLOYMENT_NAME"],
+        "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
+        "max_tokens": config.get("OPENAI_COMPLETION_MAX_TOKENS"),
+        "top_p": config.get("OPENAI_COMPLETION_TOP_P"),
+        "frequency_penalty": config.get("OPENAI_COMPLETION_PENALTY_FREQUENCY"),
+        "presence_penalty": config.get("OPENAI_COMPLETION_PENALTY_PRESENCE"),
+        "stop": config.get("OPENAI_COMPLETION_STOP"),
     }
 
     def ask(prompt, messages):
