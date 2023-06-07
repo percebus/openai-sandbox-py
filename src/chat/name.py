@@ -14,6 +14,7 @@ ENV = {
 }
 config = env.parse(ENV)
 
+
 def run():
     folder = "./data/prompting/chat/friendly"
 
