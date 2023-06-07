@@ -33,7 +33,7 @@ def create_query(config):
     return query
 
 
-def create_chat(config):
+def create_chat(config, system_prompt=None):
     params = {
         "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
@@ -44,9 +44,12 @@ def create_chat(config):
         "stop": config.get("OPENAI_COMPLETION_STOP"),
     }
 
-    def ask(prompt, messages):
+    system_message = {"role":"system", "content": system_prompt} if system_prompt else None
+    system_messages = [system_message] if system_message else []
+
+    def ask(prompt, messages=[]):
         user_prompt = {"role": "user", "content": prompt}
-        msgs = messages + [user_prompt]
+        msgs = system_messages + messages + [user_prompt]
         kwargs = dict(params)
         kwargs["messages"] = msgs
         printing.pprint(kwargs)

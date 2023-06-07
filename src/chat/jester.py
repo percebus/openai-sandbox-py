@@ -18,26 +18,26 @@ ask = api.create_chat(config)
 
 def run():
     folder = "./data/prompting/chat/jester"
-    with open(f"{folder}/messages/chicken.json") as oFile:
-        json_string = oFile.read()
-
-    messages = json.loads(json_string)
-    printing.pprint(messages)
 
     # with open(f"{folder}/system/robot.txt") as oFile:
     # with open(f"{folder}/system/Shakespear.txt") as oFile:
     with open(f"{folder}/system/Walken.txt") as oFile:
         system_prompt = oFile.read()
 
-    instruction = {"role": "system", "content": system_prompt}
-    session = [instruction] + messages
+    ask = api.create_chat(config, system_prompt)
+
+    with open(f"{folder}/messages/chicken.json") as oFile:
+        json_string = oFile.read()
+
+    messages = json.loads(json_string)
+    printing.pprint(messages)
 
     # with open(f"{folder}/prompts/dislike.txt") as oFile:
     # with open(f"{folder}/prompts/ellipsis.txt") as oFile:
     with open(f"{folder}/prompts/dunno.txt") as oFile:
         prompt = oFile.read()
 
-    response = ask(prompt, session)
+    response = ask(prompt, messages)
     print(response)
 
     choice = api.get_first_choice(response)

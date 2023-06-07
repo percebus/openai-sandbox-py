@@ -13,11 +13,14 @@ ENV = {
     **dotenv_values(".env.openai.params"),
 }
 config = env.parse(ENV)
-ask = api.create_chat(config)
-
 
 def run():
     folder = "./data/prompting/chat/friendly"
+
+    with open(f"{folder}/system/friendly.txt") as oFile:
+        system_prompt = oFile.read()
+
+    ask = api.create_chat(config, system_prompt)
 
     # with open(f"{folder}/messages/empty.json") as oFile:
     with open(f"{folder}/messages/Isa.json") as oFile:
@@ -26,17 +29,11 @@ def run():
     messages = json.loads(json_string)
     printing.pprint(messages)
 
-    with open(f"{folder}/system/friendly.txt") as oFile:
-        system_prompt = oFile.read()
-
-    instruction = {"role": "system", "content": system_prompt}
-    session = [instruction] + messages
-
     # with open(f"{folder}/prompts/Isa.txt") as oFile:
     with open(f"{folder}/prompts/whoAmI.txt") as oFile:
         prompt = oFile.read()
 
-    response = ask(prompt, session)
+    response = ask(prompt, messages)
     print(response)
 
     choice = api.get_first_choice(response)
