@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from src.lib import env
-from src.lib import api
-from src.lib import printing
+from src.libs import env
+from src.libs import api
+from src.libs import printing
 from dotenv import dotenv_values
 
 ENV = {
@@ -48,8 +48,8 @@ def run():
     #   }
     # }
 
-    result = api.get_first_result(response)
-    print(result)  # "The text displays a positive sentiment."
+    choice = api.get_first_choice(response)
+    print(choice.text)  # "The text displays a positive sentiment."
 
 
 if __name__ == "__main__":
