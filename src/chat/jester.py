@@ -20,7 +20,9 @@ def run():
     folder = "./data/prompting/chat/jester"
 
     # with open(f"{folder}/system/robot.txt") as oFile:
+    # with open(f"{folder}/system/Alpha.txt") as oFile:
     # with open(f"{folder}/system/Shakespear.txt") as oFile:
+    # with open(f"{folder}/system/Trump.txt") as oFile:
     with open(f"{folder}/system/Walken.txt") as oFile:
         system_prompt = oFile.read()
 
