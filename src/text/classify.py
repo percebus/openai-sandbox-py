@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
+import env
 import common
 from dotenv import dotenv_values
 
-config = {
+ENV = {
     **dotenv_values(".env.openai.api"),
     **dotenv_values(".env.openai.params"),
     **dotenv_values(".env.az.openai.text-curie"),
 }
-
+config = env.parse(ENV)
 query = common.create_query(config)
 
 
@@ -46,9 +47,8 @@ def run():
     #   }
     # }
 
-    first_choice = response["choices"][0]
-    result = first_choice["text"]  # "The text displays a positive sentiment."
-    print(result)
+    result = common.get_first_result(response)
+    print(result)  # "The text displays a positive sentiment."
 
 
 if __name__ == "__main__":
