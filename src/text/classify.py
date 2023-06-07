@@ -18,7 +18,7 @@ def run():
     with open(f"{folder}/samples/trip.txt") as oFile:
         text = oFile.read()
 
-    with open(f"{folder}/prompt.txt") as oFile:
+    with open(f"{folder}/prompt.tpl.txt") as oFile:
         template = oFile.read()
 
     prompt = template.format(text=text)
