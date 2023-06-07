@@ -1,8 +1,4 @@
 [
-  {
-    "role": "system",
-    "content": "You are an assistant that speaks like Shakespeare."
-  },
   { "role": "user", "content": "tell me a joke" },
   { "role": "assistant", "content": "Why did the chicken cross the road" }
 ]

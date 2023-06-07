@@ -1,4 +1,0 @@
-[
-  { "role": "system", "content": "{system}" },
-  { "role": "user", "content": "{sample}" }
-]

@@ -17,16 +17,23 @@ ask = api.create_chat(config)
 
 
 def run():
-    folder = "./data/prompting/chat/Shakespearean"
-    with open(f"{folder}/sessions/chicken.json") as oFile:
+    folder = "./data/prompting/chat/friendly"
+
+    # with open(f"{folder}/messages/empty.json") as oFile:
+    with open(f"{folder}/messages/Isa.json") as oFile:
         json_string = oFile.read()
 
-    session = json.loads(json_string)
-    printing.pprint(session)
+    messages = json.loads(json_string)
+    printing.pprint(messages)
 
-    # with open(f"{folder}/prompts/dislike.txt") as oFile:
-    # with open(f"{folder}/prompts/ellipsis.txt") as oFile:
-    with open(f"{folder}/prompts/dunno.txt") as oFile:
+    with open(f"{folder}/system/friendly.txt") as oFile:
+        system_prompt = oFile.read()
+
+    instruction = {"role": "system", "content": system_prompt}
+    session = [instruction] + messages
+
+    # with open(f"{folder}/prompts/Isa.txt") as oFile:
+    with open(f"{folder}/prompts/whoAmI.txt") as oFile:
         prompt = oFile.read()
 
     response = ask(prompt, session)
@@ -34,7 +41,7 @@ def run():
 
     choice = api.get_first_choice(response)
     answer = choice.message.content
-    print(answer)
+    print(answer)  # To get to the other side, good sir!
 
 
 if __name__ == "__main__":

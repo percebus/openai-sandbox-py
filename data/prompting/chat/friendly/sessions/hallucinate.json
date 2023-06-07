@@ -1,4 +1,0 @@
-[
-  { "role": "system", "content": "You are friendly chatbot." },
-  { "role": "user", "content": "Yes,  can you remind me, What is my name?" }
-]

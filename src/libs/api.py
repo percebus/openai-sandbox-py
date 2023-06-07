@@ -45,8 +45,8 @@ def create_chat(config):
     }
 
     def ask(prompt, messages):
-        msgs = list(messages)
-        msgs.append({"role": "user", "content": prompt})
+        user_prompt = {"role": "user", "content": prompt}
+        msgs = messages + [user_prompt]
         kwargs = dict(params)
         kwargs["messages"] = msgs
         printing.pprint(kwargs)
