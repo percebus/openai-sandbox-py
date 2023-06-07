@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import env
-import common
+from src.lib import env
+from src.lib import api
+from src.lib import printing
 from dotenv import dotenv_values
 
 ENV = {
@@ -10,7 +11,7 @@ ENV = {
     **dotenv_values(".env.az.openai.text-curie"),
 }
 config = env.parse(ENV)
-query = common.create_query(config)
+query = api.create_query(config)
 
 
 def run():
@@ -23,10 +24,10 @@ def run():
 
     prompt = template.format(text=text)
     print("Prompt:")
-    common.pprint(prompt)
+    printing.pprint(prompt)
 
     response = query(prompt)
-    common.pprint(response)
+    printing.pprint(response)
     # {
     #     "choices": [
     #     {
@@ -47,7 +48,7 @@ def run():
     #     }
     # }
 
-    result = common.get_first_result(response)
+    result = api.get_first_result(response)
     print(result)  # "Salut"
 
 
