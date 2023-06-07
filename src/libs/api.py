@@ -9,6 +9,7 @@ def config_openai(config):
     openai.api_version = config["OPENAI_API_VERSION"]
     openai.api_key = config["OPENAI_API_KEY"]
 
+
 def create_query(config):
     params = {
         "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
