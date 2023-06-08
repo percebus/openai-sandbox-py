@@ -1,5 +1,6 @@
 import openai
-
+import requests
+from string import Template
 from src.libs import printing
 
 
@@ -60,6 +61,26 @@ def create_chat(config, system_prompt=None):
         return openai.ChatCompletion.create(**kwargs)
 
     return ask
+
+
+def create_embedding_request(config):
+    config_openai(config)
+    headers = {
+        'api-key': openai.api_key
+    }
+
+    deployment_name = config['AZ_OPENAI_DEPLOYMENT_NAME']
+    url_parts = {
+        'base_url': openai.api_base,
+        'deployment_name': deployment_name,
+        'api_version': openai.api_version
+    }
+
+    template = config['OPENAI_API_URL_ENDPOINT']
+    oTemplate = Template(template)
+    url = oTemplate.substitute(**url_parts)
+    return requests.get(url, headers=headers)
+
 
 
 def get_first_choice(response):
