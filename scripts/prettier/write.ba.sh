@@ -1,1 +1,1 @@
-npx prettier . --write
+npm run prettier:write

@@ -1,0 +1,37 @@
+{
+  "name": "openai-sandbox-py",
+  "version": "0.1.0",
+  "description": "Azure OpenAI sandbox excercises",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "setup": "npm install --location=global bower",
+    "setup:ci": "npm run setup",
+    "prettier": "prettier .",
+    "prettier:write": "npm run prettier -- --write",
+    "prettier:check": "npm run prettier -- --check",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/percebus/openai-sandbox-py.git"
+  },
+  "keywords": [
+    "openAI",
+    "AI",
+    "sandbox",
+    "python",
+    "azure"
+  ],
+  "author": "percebus",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/percebus/openai-sandbox-py/issues"
+  },
+  "homepage": "https://github.com/percebus/openai-sandbox-py#readme",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
