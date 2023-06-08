@@ -1,17 +1,37 @@
 import openai
 import requests
+from openai.embeddings_utils import get_embedding
 from string import Template
 from src.libs import printing
 
 
-def config_openai(config):
+def config_openai(config: dict) -> None:
     openai.api_type = config["OPENAI_API_TYPE"]
     openai.api_base = config["OPENAI_API_URL_BASE"]
     openai.api_version = config["OPENAI_API_VERSION"]
     openai.api_key = config["OPENAI_API_KEY"]
 
 
-def create_query(config):
+# XXX? what is this for?
+def create_request(config: dict):
+    config_openai(config)
+    headers = {"api-key": openai.api_key}
+
+    deployment_name = config["AZ_OPENAI_DEPLOYMENT_NAME"]
+    url_parts = {
+        "base_url": openai.api_base,
+        "deployment_name": deployment_name,
+        "api_version": openai.api_version,
+    }
+
+    template = config["OPENAI_API_URL_ENDPOINT"]
+    oTemplate = Template(template)
+    url = oTemplate.substitute(**url_parts)
+    printing.pprint(url)
+    return requests.get(url, headers=headers)
+
+
+def create_query(config: dict):
     params = {
         "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
@@ -23,7 +43,7 @@ def create_query(config):
         "stop": config.get("OPENAI_COMPLETION_STOP"),
     }
 
-    def query(prompt):
+    def query(prompt: str):
         kwargs = dict(params)
         kwargs["prompt"] = prompt
         printing.pprint(kwargs)
@@ -34,7 +54,7 @@ def create_query(config):
     return query
 
 
-def create_chat(config, system_prompt=None):
+def create_chat(config: dict, system_prompt: str = None):
     params = {
         "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
@@ -63,27 +83,19 @@ def create_chat(config, system_prompt=None):
     return ask
 
 
-def create_embedding_request(config):
-    config_openai(config)
-    headers = {
-        'api-key': openai.api_key
-    }
+def create_embedding_query(config: dict):
+    params = {"engine": config["AZ_OPENAI_DEPLOYMENT_NAME"]}
 
-    deployment_name = config['AZ_OPENAI_DEPLOYMENT_NAME']
-    url_parts = {
-        'base_url': openai.api_base,
-        'deployment_name': deployment_name,
-        'api_version': openai.api_version
-    }
+    def get_result(text: str):
+        config_openai(config)
+        printing.pprint(text)
+        printing.pprint(params)
+        return get_embedding(text, **params)
 
-    template = config['OPENAI_API_URL_ENDPOINT']
-    oTemplate = Template(template)
-    url = oTemplate.substitute(**url_parts)
-    return requests.get(url, headers=headers)
+    return get_result
 
 
-
-def get_first_choice(response):
+def get_first_choice(response: dict) -> dict:
     choices = response.choices
     first_choice = choices[0]
     return first_choice

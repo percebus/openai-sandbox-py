@@ -8,7 +8,7 @@ transformers = {
 }
 
 
-def parse(env):
+def parse(env: dict) -> dict:
     parsed = dict(env)
     for key, fn in transformers.items():
         value = env.get(key)
