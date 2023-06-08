@@ -1,0 +1,5 @@
+---
+{text}
+---
+
+Summarize this article and identify three takeaways in a bulleted list

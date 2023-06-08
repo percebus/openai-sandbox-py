@@ -1,0 +1,6 @@
+Put two fictional characters into JSON of the following format
+
+{
+  firstNameFictional:
+  jobFictional:
+}

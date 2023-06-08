@@ -1,0 +1,7 @@
+---
+{text}
+---
+<the next line is the supporting content>
+Topics I'm very interested in: {topics}
+
+Extract the key points from the above email, and put them in a bulleted list:

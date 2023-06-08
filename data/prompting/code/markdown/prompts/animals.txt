@@ -1,0 +1,1 @@
+Write a table in markdown with 6 animals in it, with their genus and species
