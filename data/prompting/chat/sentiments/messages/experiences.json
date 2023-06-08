@@ -1,0 +1,8 @@
+[
+  { "role": "user", "content": "That was an awesome experience" },
+  { "role": "assistant", "content": "positive" },
+  { "role": "user", "content": "I won't do that again" },
+  { "role": "assistant", "content": "negative" },
+  { "role": "user", "content": "That was not worth my time" },
+  { "role": "assistant", "content": "negative" }
+]

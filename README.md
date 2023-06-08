@@ -70,6 +70,7 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 
 - Use delimeters
 
+  - `###`
   - `"""`
   - 3x `
   - `---`
@@ -95,6 +96,12 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 - Reduce hallucinations.
   - First find relevant information.
   - Answer the question based on relevant information.
+
+## Repositories
+
+- [`openai/openai-cookbook](https://github.com/openai/openai-cookbook)
+- [`MicrosoftLearning/mslearn-openai`](https://github.com/MicrosoftLearning/mslearn-openai)
+- [`Azure-samples/Azure-OpenAI-Docs-Samples`](https://github.com/Azure-samples/Azure-OpenAI-Docs-Samples)
 
 ## Tutorials
 
