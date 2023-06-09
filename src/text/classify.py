@@ -6,8 +6,7 @@ from src.libs import printing
 from dotenv import dotenv_values
 
 ENV = {
-    **dotenv_values(".env.openai.api"),
-    **dotenv_values(".env.openai.params"),
+    **dotenv_values(".env"),  # Common config
     **dotenv_values(".env.az.openai.text-curie"),
 }
 config = env.parse(ENV)

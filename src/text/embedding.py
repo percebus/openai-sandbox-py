@@ -11,8 +11,8 @@ from src.libs import printing
 from src.libs import strings
 
 ENV = {
-    **dotenv_values(".env.openai.api"),
-    **dotenv_values(".env.az.openai.text-embedding-ada"),
+    **dotenv_values(".env"),  # Common config
+    **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
 printing.pprint(config)
@@ -63,10 +63,10 @@ def run():
 
     with open(f"{folder}/prompts/cable.txt") as oFile:
         prompt = oFile.read()
-    printing.pprint(newDataFrame)
 
     oDataFrame = pandas.read_csv(f"{folder}/samples/bill_sum_data.csv")
     newDataFrame = prepare_data(oDataFrame)
+    printing.pprint(newDataFrame)
 
     newDataFrame["embedding"] = newDataFrame["text"].apply(lambda s: query(s))
     printing.pprint(newDataFrame)

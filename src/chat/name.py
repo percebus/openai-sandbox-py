@@ -8,9 +8,8 @@ from src.libs import printing
 
 
 ENV = {
-    **dotenv_values(".env.openai.api"),
-    **dotenv_values(".env.az.openai.gpt-35-turbo"),
-    **dotenv_values(".env.openai.params"),
+    **dotenv_values(".env"),  # Common config
+    **dotenv_values(".env.az.openai.gpt-35-turbo"),  # ChatGPT
 }
 config = env.parse(ENV)
 
