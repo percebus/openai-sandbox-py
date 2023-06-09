@@ -6,9 +6,6 @@ authors = ["Juan Guerrero <JCystems@gMail.com>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
-[tool.isort]
-profile = "black"
-
 [tool.poetry.dependencies]
 python = "^3.11"
 openai = "^0.27.7"
