@@ -1,0 +1,9 @@
+[format]
+max-line-length = 88
+
+[MESSAGES CONTROL]
+disable=
+  missing-module-docstring,
+  missing-function-docstring,
+  invalid-name, # I like camelCase and/or Hungarian notation
+  duplicate-code  # the nature of this project

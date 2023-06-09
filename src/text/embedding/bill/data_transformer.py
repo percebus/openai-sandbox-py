@@ -4,10 +4,7 @@ import pandas
 import tiktoken
 from dotenv import dotenv_values
 
-from src.libs import env
-from src.libs import api
-from src.libs import printing
-from src.libs import strings
+from src.libs import api, env, printing, strings
 
 ENV = {
     **dotenv_values(".env"),  # Common config
@@ -18,7 +15,7 @@ query = api.create_embedding_query(config)
 
 
 # Pick only columns we're interested in
-def select_columns(oDataFrame, columns=["text", "summary", "title"]):
+def select_columns(oDataFrame, columns):
     return oDataFrame[columns]
 
 
@@ -39,7 +36,9 @@ def filter_rows(oDataFrame, encoding="cl100k_base", max_tokens=8192):
 
 def prepare_data(oDataFrame):
     printing.pprint(oDataFrame)
-    subDataFrame = select_columns(oDataFrame.copy())
+    subDataFrame = select_columns(
+        oDataFrame.copy(), columns=["text", "summary", "title"]
+    )
     cleanDataFrame = clean_data(subDataFrame.copy())
     filteredDataFrame = filter_rows(cleanDataFrame.copy())
     newDataFrame = filteredDataFrame  # .head(1) # Control how many rows
@@ -54,12 +53,15 @@ def run():
     newDataFrame = prepare_data(oDataFrame)
     printing.pprint(newDataFrame)
 
-    newDataFrame["embedding"] = newDataFrame["text"].apply(lambda s: query(s))
+    newDataFrame["embedding"] = newDataFrame["text"].apply(
+        lambda s: query(s)  # pylint: disable=unnecessary-lambda
+    )
     printing.pprint(newDataFrame)
 
-    csv_text = newDataFrame.to_json(orient='records')
-    with open(f"{folder}/data/bills.json", 'w') as destFile:
+    csv_text = newDataFrame.to_json(orient="records")
+    with open(f"{folder}/data/bills.json", "w", encoding="utf-8") as destFile:
         destFile.write(csv_text)
+
 
 if __name__ == "__main__":
     run()

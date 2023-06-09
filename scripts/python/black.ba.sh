@@ -1,1 +1,1 @@
-black ./src
+python -m black ./src

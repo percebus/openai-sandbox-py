@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-from src.libs import env
-from src.libs import api
-from src.libs import printing
 from dotenv import dotenv_values
+
+from src.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
@@ -15,10 +14,10 @@ query = api.create_query(config)
 
 def run():
     folder = "./data/prompting/text/inferring/sentiment/Tweet"
-    with open(f"{folder}/samples/trip.txt") as oFile:
+    with open(f"{folder}/samples/trip.txt", encoding="utf-8") as oFile:
         text = oFile.read()
 
-    with open(f"{folder}/prompt.tpl.txt") as oFile:
+    with open(f"{folder}/prompt.tpl.txt", encoding="utf-8") as oFile:
         template = oFile.read()
 
     prompt = template.format(text=text)

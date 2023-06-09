@@ -2,11 +2,9 @@
 
 import pandas
 from dotenv import dotenv_values
-
 from openai.embeddings_utils import cosine_similarity
-from src.libs import env
-from src.libs import api
-from src.libs import printing
+
+from src.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
@@ -28,7 +26,7 @@ def search(prompt, oDataFrame, top_n=3):
 def run():
     folder = "./data/prompting/text/embedding/billing"
 
-    with open(f"{folder}/prompts/cable.txt") as oFile:
+    with open(f"{folder}/prompts/cable.txt", encoding="utf-8") as oFile:
         prompt = oFile.read()
 
     oDataFrame = pandas.read_json(f"{folder}/data/bills.json")

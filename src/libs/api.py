@@ -1,7 +1,9 @@
+from string import Template
+
 import openai
 import requests
 from openai.embeddings_utils import get_embedding
-from string import Template
+
 from src.libs import printing
 
 

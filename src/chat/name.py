@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 import json
-from dotenv import dotenv_values
-from src.libs import env
-from src.libs import api
-from src.libs import printing
 
+from dotenv import dotenv_values
+
+from src.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
@@ -17,20 +16,20 @@ config = env.parse(ENV)
 def run():
     folder = "./data/prompting/chat/friendly"
 
-    with open(f"{folder}/system/friendly.txt") as oFile:
+    with open(f"{folder}/system/friendly.txt", encoding="utf-8") as oFile:
         system_prompt = oFile.read()
 
     ask = api.create_chat(config, system_prompt)
 
-    # with open(f"{folder}/messages/empty.json") as oFile:
-    with open(f"{folder}/messages/Isa.json") as oFile:
+    # with open(f"{folder}/messages/empty.json", encoding="utf-8") as oFile:
+    with open(f"{folder}/messages/Isa.json", encoding="utf-8") as oFile:
         json_string = oFile.read()
 
     messages = json.loads(json_string)
     printing.pprint(messages)
 
-    # with open(f"{folder}/prompts/Isa.txt") as oFile:
-    with open(f"{folder}/prompts/whoAmI.txt") as oFile:
+    # with open(f"{folder}/prompts/Isa.txt", encoding="utf-8") as oFile:
+    with open(f"{folder}/prompts/whoAmI.txt", encoding="utf-8") as oFile:
         prompt = oFile.read()
 
     response = ask(prompt, messages)

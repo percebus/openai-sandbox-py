@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 import json
-from dotenv import dotenv_values
-from src.libs import env
-from src.libs import api
-from src.libs import printing
 
+from dotenv import dotenv_values
+
+from src.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
@@ -18,24 +17,24 @@ ask = api.create_chat(config)
 def run():
     folder = "./data/prompting/chat/jester"
 
-    # with open(f"{folder}/system/robot.txt") as oFile:
-    # with open(f"{folder}/system/Alpha.txt") as oFile:
-    # with open(f"{folder}/system/Shakespear.txt") as oFile:
-    # with open(f"{folder}/system/Trump.txt") as oFile:
-    with open(f"{folder}/system/Walken.txt") as oFile:
+    # with open(f"{folder}/system/robot.txt", encoding="utf-8") as oFile:
+    # with open(f"{folder}/system/Alpha.txt", encoding="utf-8") as oFile:
+    # with open(f"{folder}/system/Shakespear.txt", encoding="utf-8") as oFile:
+    # with open(f"{folder}/system/Trump.txt", encoding="utf-8") as oFile:
+    with open(f"{folder}/system/Walken.txt", encoding="utf-8") as oFile:
         system_prompt = oFile.read()
 
-    ask = api.create_chat(config, system_prompt)
+    ask = api.create_chat(config, system_prompt)  # pylint: disable=redefined-outer-name
 
-    with open(f"{folder}/messages/chicken.json") as oFile:
+    with open(f"{folder}/messages/chicken.json", encoding="utf-8") as oFile:
         json_string = oFile.read()
 
     messages = json.loads(json_string)
     printing.pprint(messages)
 
-    # with open(f"{folder}/prompts/dislike.txt") as oFile:
-    # with open(f"{folder}/prompts/ellipsis.txt") as oFile:
-    with open(f"{folder}/prompts/dunno.txt") as oFile:
+    # with open(f"{folder}/prompts/dislike.txt", encoding="utf-8") as oFile:
+    # with open(f"{folder}/prompts/ellipsis.txt", encoding="utf-8") as oFile:
+    with open(f"{folder}/prompts/dunno.txt", encoding="utf-8") as oFile:
         prompt = oFile.read()
 
     response = ask(prompt, messages)
