@@ -354,6 +354,9 @@ idna==3.4 ; python_version >= "3.11" and python_version < "4.0" \
 joblib==1.2.0 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:091138ed78f800342968c523bdde947e7a305b8594b910a0fea2ab83c3c6d385 \
     --hash=sha256:e1cee4a79e4af22881164f218d4311f60074197fb707e082e803b61f6d137018
+json5==0.9.14 ; python_version >= "3.11" and python_version < "4.0" \
+    --hash=sha256:740c7f1b9e584a468dbb2939d8d458db3427f2c93ae2139d05f47e453eae964f \
+    --hash=sha256:9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02
 kiwisolver==1.4.4 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:02f79693ec433cb4b5f51694e8477ae83b3205768a6fb48ffba60549080e295b \
     --hash=sha256:03baab2d6b4a54ddbb43bba1a3a2d1627e82d205c5cf8f4c924dc49284b87166 \

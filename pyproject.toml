@@ -16,6 +16,7 @@ plotly = "^5.14.1"
 scikit-learn = "^1.2.2"
 pandas = "^2.0.2"
 tiktoken = "^0.4.0"
+json5 = "^0.9.14"
 
 
 [tool.poetry.group.dev.dependencies]

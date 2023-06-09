@@ -560,6 +560,20 @@ files = [
 ]
 
 [[package]]
+name = "json5"
+version = "0.9.14"
+description = "A Python implementation of the JSON5 data format."
+optional = false
+python-versions = "*"
+files = [
+    {file = "json5-0.9.14-py2.py3-none-any.whl", hash = "sha256:740c7f1b9e584a468dbb2939d8d458db3427f2c93ae2139d05f47e453eae964f"},
+    {file = "json5-0.9.14.tar.gz", hash = "sha256:9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"},
+]
+
+[package.extras]
+dev = ["hypothesis"]
+
+[[package]]
 name = "kiwisolver"
 version = "1.4.4"
 description = "A fast implementation of the Cassowary constraint solver"
@@ -1564,4 +1578,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "6ddfb641e7ceabc4f45adaade964d8c0dbacaa08641c2888035317b280bff29a"
+content-hash = "92e0b8693c8d0e2284cdd378530860a20d88ee9c96fa717fc0a6027971b6d077"
