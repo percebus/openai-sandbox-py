@@ -23,7 +23,8 @@ def run():
         template = oFile.read()
 
     prompt = template.format(text=text)
-    print("Prompt: " + prompt)
+    print("Prompt:")
+    printing.pprint(prompt)
 
     response = query(prompt)
     print(response)
