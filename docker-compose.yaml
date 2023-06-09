@@ -1,0 +1,16 @@
+
+version: '3.8'
+services:
+    redis:
+      image: redis:7.0.11
+      restart: always
+      ports:
+        - 6379:6379
+      environment:
+        - .env
+      command: redis-server --save 20 1 --loglevel ${REDIS_LOG_LEVEL} # --requirepass ${REDIS_PASSWORD}
+      volumes:
+        - redis:/containers/redis
+volumes:
+    redis:
+      driver: local
