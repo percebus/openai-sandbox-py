@@ -4,7 +4,6 @@ import pandas
 import tiktoken
 from dotenv import dotenv_values
 
-from openai.embeddings_utils import cosine_similarity
 from src.libs import env
 from src.libs import api
 from src.libs import printing
@@ -15,7 +14,6 @@ ENV = {
     **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
-printing.pprint(config)
 query = api.create_embedding_query(config)
 
 
@@ -49,20 +47,8 @@ def prepare_data(oDataFrame):
     return newDataFrame
 
 
-def search(prompt, oDataFrame, top_n=3):
-    question = query(prompt)
-    oDataFrame["similarities"] = oDataFrame["embedding"].apply(
-        lambda bill: cosine_similarity(bill, question)
-    )
-
-    return oDataFrame.sort_values("similarities", ascending=False).head(top_n)
-
-
 def run():
     folder = "./data/prompting/text/embedding/billing"
-
-    with open(f"{folder}/prompts/cable.txt") as oFile:
-        prompt = oFile.read()
 
     oDataFrame = pandas.read_csv(f"{folder}/samples/bill_sum_data.csv")
     newDataFrame = prepare_data(oDataFrame)
@@ -71,9 +57,9 @@ def run():
     newDataFrame["embedding"] = newDataFrame["text"].apply(lambda s: query(s))
     printing.pprint(newDataFrame)
 
-    resultDataFrame = search(prompt, newDataFrame)
-    printing.pprint(resultDataFrame)
-
+    csv_text = newDataFrame.to_json(orient='records')
+    with open(f"{folder}/data/bills.json", 'w') as destFile:
+        destFile.write(csv_text)
 
 if __name__ == "__main__":
     run()
