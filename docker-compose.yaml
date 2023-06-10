@@ -1,18 +1,29 @@
 version: "3.8"
-services:
-  redis:
-    # image: redis/redis-stack-server:latest # 6.2.12 # TODO? or XXX?
-    # image: redis/redis-stack:latest # 6.2.12
-    image: redis:7.0.11
-    restart: always
-    ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
-      - 8001:8001 # RedisIgnsight
-    environment:
-      - .env
-    command: redis-server --save 20 1 --loglevel ${REDIS_LOG_LEVEL} --requirepass ${REDIS_PASSWORD}
-    volumes:
-      - redis:/containers/redis
 volumes:
   redis:
     driver: local
+
+services:
+  redis:
+    # image: redis/redis-stack-server:latest # No RedisInsights # 6.2.12
+    image: redis/redis-stack:latest # 6.2.12
+    restart: always
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    environment:
+      - .env
+    command: redis-stack-server --save 20 1 --loglevel ${REDIS_LOG_LEVEL} --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis:/containers/redis
+
+  redis-ignsight:
+    image: redislabs/redisinsight:latest
+    restart: always
+    ports:
+      - 8001:8001
+    environment:
+      - REDISINSIGHT_REDIS_URI=redis://redis:${REDIS_PORT}
+    volumes:
+      - redis:/containers/redis
+    depends_on:
+      - redis

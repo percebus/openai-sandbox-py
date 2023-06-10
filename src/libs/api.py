@@ -88,13 +88,13 @@ def create_chat(config: dict, system_prompt: str = None):
 def create_embedding_query(config: dict):
     params = {"engine": config["AZ_OPENAI_DEPLOYMENT_NAME"]}
 
-    def get_result(text: str):
+    def createEmbedding(text: str):
         config_openai(config)
         printing.pprint(text)
         printing.pprint(params)
         return get_embedding(text, **params)
 
-    return get_result
+    return createEmbedding
 
 
 def get_first_choice(response: dict) -> dict:
