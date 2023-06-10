@@ -111,6 +111,7 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 - [Utilize prompt engineering in your app](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/03-prompt-engineering.html)
 - [ChatGTP Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
 - [Explore Azure OpenAI Service embeddings and document search](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/tutorials/embeddings?tabs=command-line)
+- [Storing and querying for embeddings with Redis](https://blog.baeke.info/2023/03/21/storing-and-querying-for-embeddings-with-redis/)
 
 ## Resources
 

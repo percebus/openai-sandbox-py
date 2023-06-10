@@ -1,10 +1,13 @@
 version: "3.8"
 services:
   redis:
+    # image: redis/redis-stack-server:latest # 6.2.12 # TODO? or XXX?
+    # image: redis/redis-stack:latest # 6.2.12
     image: redis:7.0.11
     restart: always
     ports:
       - ${REDIS_PORT}:${REDIS_PORT}
+      - 8001:8001 # RedisIgnsight
     environment:
       - .env
     command: redis-server --save 20 1 --loglevel ${REDIS_LOG_LEVEL} --requirepass ${REDIS_PASSWORD}

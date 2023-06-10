@@ -2,7 +2,7 @@
   "redisXplorer.config": {
     "profiles": [
       {
-        "name": "Redis Xplorer : Add new redis server connection profile",
+        "name": "docker-compose",
         "host": "localhost",
         "accessKey": "changeMe123",
         "filter": "*",
