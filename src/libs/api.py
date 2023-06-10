@@ -45,7 +45,7 @@ def create_query(config: dict):
         "stop": config.get("OPENAI_COMPLETION_STOP"),
     }
 
-    def query(prompt: str):
+    def createCompletion(prompt: str):
         kwargs = dict(params)
         kwargs["prompt"] = prompt
         printing.pprint(kwargs)
@@ -53,7 +53,7 @@ def create_query(config: dict):
         config_openai(config)
         return openai.Completion.create(**kwargs)
 
-    return query
+    return createCompletion
 
 
 def create_chat(config: dict, system_prompt: str = None):
@@ -72,7 +72,7 @@ def create_chat(config: dict, system_prompt: str = None):
     )
     system_messages = [system_message] if system_message else []
 
-    def ask(prompt, messages=[]):
+    def createChatCompletion(prompt, messages=[]):
         user_prompt = {"role": "user", "content": prompt}
         msgs = system_messages + messages + [user_prompt]
         kwargs = dict(params)
@@ -82,7 +82,7 @@ def create_chat(config: dict, system_prompt: str = None):
         config_openai(config)
         return openai.ChatCompletion.create(**kwargs)
 
-    return ask
+    return createChatCompletion
 
 
 def create_embedding_query(config: dict):

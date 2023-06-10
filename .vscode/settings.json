@@ -1,0 +1,14 @@
+{
+  "redisXplorer.config": {
+    "profiles": [
+      {
+        "name": "Redis Xplorer : Add new redis server connection profile",
+        "host": "localhost",
+        "accessKey": "changeMe123",
+        "filter": "*",
+        "port": "6379"
+      }
+    ],
+    "scanLimit": 200
+  }
+}

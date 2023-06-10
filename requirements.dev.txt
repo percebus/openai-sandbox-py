@@ -935,6 +935,9 @@ pyyaml==6.0 ; python_version >= "3.11" and python_version < "3.12" \
     --hash=sha256:dbad0e9d368bb989f4515da330b88a057617d16b6a8245084f1b05400f24609f \
     --hash=sha256:e61ceaab6f49fb8bdfaa0f92c4b57bcfbea54c09277b1b4f7ac376bfb7a7c174 \
     --hash=sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5
+redis==4.5.5 ; python_version >= "3.11" and python_version < "3.12" \
+    --hash=sha256:77929bc7f5dab9adf3acba2d3bb7d7658f1e0c2f1cafe7eb36434e751c471119 \
+    --hash=sha256:dc87a0bdef6c8bfe1ef1e1c40be7034390c2ae02d92dcd0c7ca1729443899880
 regex==2023.6.3 ; python_version >= "3.11" and python_version < "3.12" \
     --hash=sha256:0385e73da22363778ef2324950e08b689abdf0b108a7d8decb403ad7f5191938 \
     --hash=sha256:051da80e6eeb6e239e394ae60704d2b566aa6a7aed6f2890a7967307267a5dc6 \

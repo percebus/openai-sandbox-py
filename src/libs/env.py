@@ -5,6 +5,7 @@ transformers = {
     "OPENAI_COMPLETION_PENALTY_FREQUENCY": float,
     "OPENAI_COMPLETION_PENALTY_PRESENCE": float,
     "OPENAI_COMPLETION_BEST_OF": int,
+    "REDIS_PORT": int,
 }
 
 

@@ -58,9 +58,9 @@ def run():
     )
     printing.pprint(newDataFrame)
 
-    csv_text = newDataFrame.to_json(orient="records")
+    json_string = newDataFrame.to_json(orient="records")
     with open(f"{folder}/data/bills.json", "w", encoding="utf-8") as destFile:
-        destFile.write(csv_text)
+        destFile.write(json_string)
 
 
 if __name__ == "__main__":
