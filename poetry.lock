@@ -1441,6 +1441,7 @@ files = [
 ]
 
 [package.dependencies]
+python-dotenv = {version = ">=0.10.4", optional = true, markers = "extra == \"dotenv\""}
 typing-extensions = ">=4.2.0"
 
 [package.extras]
@@ -2206,4 +2207,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "de04aa365fcb1d7fea1ca0ce22099fc2843538925f06f567cba54c8067e06018"
+content-hash = "cbffb2913e3b69a4b78bb71430cc5723b5ede1794f827b04e11107f39be3879e"

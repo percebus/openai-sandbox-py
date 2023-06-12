@@ -127,3 +127,15 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 - [Understanding embeddings in Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/understand-embeddings)
 - [New and improved embedding model](https://openai.com/blog/new-and-improved-embedding-model)
 - [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
+
+### [L]arge [L]anguage [M]odels
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://react-lm.github.io/)
+
+### LangChain
+
+- [Prompt Templates](https://python.langchain.com/en/latest/modules/prompts/prompt_templates.html)
+- [Output Parsers](https://python.langchain.com/en/latest/modules/prompts/output_parsers.html)
+- [Chains](https://python.langchain.com/en/latest/modules/chains.html)
+- [Tools](https://python.langchain.com/en/latest/modules/agents/tools.html)
+- [Agents](https://python.langchain.com/en/latest/modules/agents.html)
