@@ -7,14 +7,18 @@
     "test": "tests"
   },
   "scripts": {
-    "npm:install:global:all": "npm install --location=global bower redis-cli",
+    "npm:install:global:all": "npm install --location=global bower redis-cli open-cli",
     "npm:install:global:ci": "npm install --location=global bower",
     "setup": "npm run npm:install:global:all",
     "setup:ci": "npm run npm:install:global:ci",
     "prettier": "prettier .",
     "prettier:write": "npm run prettier -- --write",
     "prettier:check": "npm run prettier -- --check",
-    "test": "exit 0"
+    "test": "exit 0",
+    "docker:compose:up": "docker compose up --build",
+    "browser": "open-cli http://localhost:8001",
+    "prestart": "npm run browser",
+    "start": "npm run docker:compose:up"
   },
   "repository": {
     "type": "git",
