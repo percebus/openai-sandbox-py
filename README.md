@@ -99,7 +99,7 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 
 ## Repositories
 
-- [`openai/openai-cookbook](https://github.com/openai/openai-cookbook)
+- [`openai/openai-cookbook`](https://github.com/openai/openai-cookbook)
 - [`MicrosoftLearning/mslearn-openai`](https://github.com/MicrosoftLearning/mslearn-openai)
 - [`Azure-samples/Azure-OpenAI-Docs-Samples`](https://github.com/Azure-samples/Azure-OpenAI-Docs-Samples)
 

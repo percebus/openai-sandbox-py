@@ -34,6 +34,7 @@ def load_data(bills):
         mapping = {
             "embedding": _vector,
             "text": bill["text"],
+            "title": bill["title"],
         }
 
         print(f"Writing bill: ${idx}")
@@ -65,6 +66,7 @@ def run():
             },
         ),
         TextField("text"),
+        # TextField("title"), # TODO? or XXX?
     ]
     prefixes = [f"{PREFIX}:"]
     hashIndexDefinition = IndexDefinition(prefix=prefixes, index_type=IndexType.HASH)

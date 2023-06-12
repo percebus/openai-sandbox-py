@@ -5,5 +5,6 @@ max-line-length = 88
 disable=
   missing-module-docstring,
   missing-function-docstring,
+  fixme,
   invalid-name, # I like camelCase and/or Hungarian notation
   duplicate-code  # the nature of this project

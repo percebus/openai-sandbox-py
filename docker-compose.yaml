@@ -5,8 +5,8 @@ volumes:
 
 services:
   redis:
-    # image: redis/redis-stack-server:latest # No RedisInsights # 6.2.12
-    image: redis/redis-stack:latest # 6.2.12
+    # image: redis/redis-stack:latest # 6.2.12
+    image: redis/redis-stack-server:latest # 6.2.12 # No RedisInsights
     restart: always
     ports:
       - ${REDIS_PORT}:${REDIS_PORT}
