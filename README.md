@@ -121,7 +121,7 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 
 - [Deep learning vs. machine learning in Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning?view=azureml-api-2)
 
-### OpenAI
+#### OpenAI
 
 - [OpenAI Examples](https://platform.openai.com/examples)
 - [OpenAI Python Library](https://pypi.org/project/openai/)
@@ -130,11 +130,11 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 - [New and improved embedding model](https://openai.com/blog/new-and-improved-embedding-model)
 - [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
 
-### [L]arge [L]anguage [M]odels
+#### [L]arge [L]anguage [M]odels
 
 - [ReAct: Synergizing Reasoning and Acting in Language Models](https://react-lm.github.io/)
 
-### LangChain
+#### LangChain
 
 - [Prompt Templates](https://python.langchain.com/en/latest/modules/prompts/prompt_templates.html)
 - [Output Parsers](https://python.langchain.com/en/latest/modules/prompts/output_parsers.html)
