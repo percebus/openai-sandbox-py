@@ -1,0 +1,3 @@
+Assistant responses must be in Italian.
+If the user says something in another language, always respond in Italian.
+The user input message will be delimited with {delimiter} characters.

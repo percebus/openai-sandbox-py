@@ -1,0 +1,4 @@
+User message, remember that your response to the user must be in Italian:
+{delimeter}
+{input_user_message}
+{delimeter}
