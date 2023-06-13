@@ -107,13 +107,20 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 
 ## Tutorials
 
+- [Storing and querying for embeddings with Redis](https://blog.baeke.info/2023/03/21/storing-and-querying-for-embeddings-with-redis/)
+
+### MS Learn
+
 - [Introduction to Azure OpenAI Service](https://learn.microsoft.com/en-us/training/modules/explore-azure-openai/)
 - [Get started with Azure OpenAI Service](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/01-get-started-azure-openai.html)
 - [Integrate Azure OpenAI into your app](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/02-natural-language-azure-openai.html)
 - [Utilize prompt engineering in your app](https://microsoftlearning.github.io/mslearn-openai/Instructions/Labs/03-prompt-engineering.html)
-- [ChatGTP Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
 - [Explore Azure OpenAI Service embeddings and document search](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/tutorials/embeddings?tabs=command-line)
-- [Storing and querying for embeddings with Redis](https://blog.baeke.info/2023/03/21/storing-and-querying-for-embeddings-with-redis/)
+
+### DeepLearning.AI
+
+- [ChatGTP Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)
+- [Building Systems with the ChatGPT API](https://learn.deeplearning.ai/chatgpt-building-system/)
 
 ## Resources
 
@@ -121,7 +128,7 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 
 - [Deep learning vs. machine learning in Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning?view=azureml-api-2)
 
-#### OpenAI
+### OpenAI
 
 - [OpenAI Examples](https://platform.openai.com/examples)
 - [OpenAI Python Library](https://pypi.org/project/openai/)
@@ -130,11 +137,11 @@ Learn more about [prompt engineering](https://learn.microsoft.com/en-us/azure/co
 - [New and improved embedding model](https://openai.com/blog/new-and-improved-embedding-model)
 - [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
 
-#### [L]arge [L]anguage [M]odels
+### [L]arge [L]anguage [M]odels
 
 - [ReAct: Synergizing Reasoning and Acting in Language Models](https://react-lm.github.io/)
 
-#### LangChain
+### LangChain
 
 - [Prompt Templates](https://python.langchain.com/en/latest/modules/prompts/prompt_templates.html)
 - [Output Parsers](https://python.langchain.com/en/latest/modules/prompts/output_parsers.html)
