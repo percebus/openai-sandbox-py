@@ -1,6 +1,6 @@
 !env/*.sample
 env/*.sh
-.env*
+.env
 
 ##################################
 ### VisualStudioCode.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
