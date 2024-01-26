@@ -1043,6 +1043,9 @@ prance==23.6.21.0 ; python_version >= "3.11" and python_version < "3.12" \
 pre-commit==3.6.0 ; python_version >= "3.11" and python_version < "3.12" \
     --hash=sha256:c255039ef399049a5544b6ce13d135caba8f2c28c3b4033277a788f434308376 \
     --hash=sha256:d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d
+pyclean==2.7.6 ; python_version >= "3.11" and python_version < "3.12" \
+    --hash=sha256:cde95ad4fbc194e970fd7ad009e82718f6c1d1309b195be9018d334d79661cca \
+    --hash=sha256:db5f74f6d2fedb79366e3260b260f5ab0053e1df28af14fc2c860800bf00fe96
 pydantic-core==2.14.6 ; python_version >= "3.11" and python_version < "3.12" \
     --hash=sha256:00646784f6cd993b1e1c0e7b0fdcbccc375d539db95555477771c27555e3c556 \
     --hash=sha256:00b1087dabcee0b0ffd104f9f53d7d3eaddfaa314cdd6726143af6bc713aa27e \
