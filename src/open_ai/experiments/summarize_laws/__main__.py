@@ -2,13 +2,12 @@ import asyncio
 
 from dotenv import load_dotenv
 
-from src.open_ai.experiments.summarize_laws.summarizer import Summarizer
+from src.open_ai.semantickernel.summarizer.summarizer import Summarizer
 
 
 async def run():
     oSummarizer = Summarizer()
-
-    await oSummarizer.process_file("summarize_in_5_words", "data/facts/laws/asimov.txt")
+    await oSummarizer.process_file("SummarizeIn5WordsFunction", "data/facts/laws/asimov.txt")
 
     file_paths = [
         "data/facts/laws/thermodynamics.txt",
@@ -17,7 +16,7 @@ async def run():
     ]
 
     for file_path in file_paths:
-        await oSummarizer.process_file("summarize_in_1_line_with_fewest_words", file_path)
+        await oSummarizer.process_file("SummarizeIn1LineFunction", file_path)
 
 
 async def main():
