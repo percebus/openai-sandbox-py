@@ -21,7 +21,7 @@ class FunctionsProvier:
     instances: dict[type[FunctionBase], FunctionBase] = field(init=False)
 
     def __post_init__(self):
-        self.classes = {  # type
+        self.classes = {  # type: ignore
             name: item
             for module in modules
             for name, item in inspect.getmembers(module)
