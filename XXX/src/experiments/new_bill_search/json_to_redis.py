@@ -6,11 +6,11 @@ from redis.commands.search.field import TextField, VectorField
 from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.exceptions import ResponseError
 
-from src.libs import cache, env, vectors
+from src.open_ai.libs import cache, env, vectors
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
+    **dotenv_values(".env.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
 
@@ -54,7 +54,7 @@ def run():
     redisPileline = oRedis.pipeline(transaction=False)
     redisPileline.execute()
 
-    dim = config["AZ_OPENAI_MODEL_DIM"]  # 1536 for ada-002
+    dim = config["OPENAI_API_MODEL_DIM"]  # 1536 for ada-002
     schema = [
         VectorField(
             "embedding",

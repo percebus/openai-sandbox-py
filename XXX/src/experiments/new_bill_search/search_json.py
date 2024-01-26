@@ -4,11 +4,11 @@ import pandas
 from dotenv import dotenv_values
 from openai.embeddings_utils import cosine_similarity
 
-from src.libs import api, env, printing
+from src.open_ai.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
+    **dotenv_values(".env.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
 query = api.create_embedding_query(config)

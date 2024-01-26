@@ -1,0 +1,3 @@
+1. Energy cannot be created or destroyed.
+2. For a spontaneous process, the entropy of the universe increases.
+3. A perfect crystal at zero Kelvin has zero entropy.

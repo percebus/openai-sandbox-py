@@ -1,5 +1,6 @@
+# XXX Use Settings
 transformers = {
-    "AZ_OPENAI_MODEL_DIM": int,
+    "OPENAI_API_MODEL_DIM": int,
     "OPENAI_COMPLETION_TEMPERATURE": float,
     "OPENAI_COMPLETION_MAX_TOKENS": int,
     "OPENAI_COMPLETION_TOP_P": float,

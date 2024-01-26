@@ -4,12 +4,12 @@ import openai
 import requests
 from openai.embeddings_utils import get_embedding
 
-from src.libs import printing
+from src.open_ai.libs import printing
 
 
 def config_openai(config: dict) -> None:
     openai.api_type = config["OPENAI_API_TYPE"]
-    openai.api_base = config["OPENAI_API_URL_BASE"]
+    openai.api_base = config["OPENAI_API_BASE_URL"]
     openai.api_version = config["OPENAI_API_VERSION"]
     openai.api_key = config["OPENAI_API_KEY"]
 
@@ -19,7 +19,7 @@ def create_request(config: dict):
     config_openai(config)
     headers = {"api-key": openai.api_key}
 
-    deployment_name = config["AZ_OPENAI_DEPLOYMENT_NAME"]
+    deployment_name = config["OPENAI_API_DEPLOYMENT_NAME"]
     url_parts = {
         "base_url": openai.api_base,
         "deployment_name": deployment_name,
@@ -35,7 +35,7 @@ def create_request(config: dict):
 
 def create_query(config: dict):
     params = {
-        "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
+        "engine": config["OPENAI_API_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
         "max_tokens": config.get("OPENAI_COMPLETION_MAX_TOKENS"),
         "top_p": config.get("OPENAI_COMPLETION_TOP_P"),
@@ -58,7 +58,7 @@ def create_query(config: dict):
 
 def create_chat(config: dict, system_prompt: str = None):
     params = {
-        "engine": config["AZ_OPENAI_DEPLOYMENT_NAME"],
+        "engine": config["OPENAI_API_DEPLOYMENT_NAME"],
         "temperature": config.get("OPENAI_COMPLETION_TEMPERATURE"),
         "max_tokens": config.get("OPENAI_COMPLETION_MAX_TOKENS"),
         "top_p": config.get("OPENAI_COMPLETION_TOP_P"),
@@ -86,7 +86,7 @@ def create_chat(config: dict, system_prompt: str = None):
 
 
 def create_embedding_query(config: dict):
-    params = {"engine": config["AZ_OPENAI_DEPLOYMENT_NAME"]}
+    params = {"engine": config["OPENAI_API_DEPLOYMENT_NAME"]}
 
     def createEmbedding(text: str):
         config_openai(config)

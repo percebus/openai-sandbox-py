@@ -4,11 +4,11 @@ import json
 
 from dotenv import dotenv_values
 
-from src.libs import api, env, printing
+from src.open_ai.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.gpt-35-turbo"),  # ChatGPT
+    **dotenv_values(".env.openai.gpt-35-turbo"),  # ChatGPT
 }
 config = env.parse(ENV)
 ask = api.create_chat(config)

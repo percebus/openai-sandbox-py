@@ -1,0 +1,2 @@
+Every point mass attracts every single other point mass by a force acting along the line intersecting both points.
+The force is proportional to the product of the two masses and inversely proportional to the square of the distance between them.

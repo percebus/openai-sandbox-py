@@ -4,11 +4,11 @@ import pandas
 import tiktoken
 from dotenv import dotenv_values
 
-from src.libs import api, env, printing, strings
+from src.open_ai.libs import api, env, printing, strings
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
+    **dotenv_values(".env.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
 query = api.create_embedding_query(config)

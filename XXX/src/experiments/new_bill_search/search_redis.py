@@ -5,11 +5,11 @@ from dotenv import dotenv_values
 from redis.commands.search.query import Query
 from redis.exceptions import ResponseError
 
-from src.libs import api, cache, env
+from src.open_ai.libs import api, cache, env
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.text-embedding-ada"),  # ADA text-embedding
+    **dotenv_values(".env.openai.text-embedding-ada"),  # ADA text-embedding
 }
 config = env.parse(ENV)
 query = api.create_embedding_query(config)

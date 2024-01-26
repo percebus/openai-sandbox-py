@@ -2,11 +2,11 @@
 
 from dotenv import dotenv_values
 
-from src.libs import api, env, printing
+from src.open_ai.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config
-    **dotenv_values(".env.az.openai.text-curie"),
+    **dotenv_values(".env.openai.text-curie"),
 }
 config = env.parse(ENV)
 query = api.create_query(config)
