@@ -28,4 +28,4 @@ repos:
         entry: bash scripts/poetry/plugins/run.ba.sh
         language: system
         stages: [pre-commit]
-        types: [python]
+        files: poetry.lock
