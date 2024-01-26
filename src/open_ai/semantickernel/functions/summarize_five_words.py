@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.base.function import FunctionBase
+from src.open_ai.semantickernel.core.function.base import FunctionBase
 
 
 @dataclass

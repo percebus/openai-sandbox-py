@@ -9,7 +9,7 @@ from src.open_ai.config.settings import Settings
 
 
 @dataclass
-class AppBase(ABC):
+class ClientBase(ABC):
     config: Configuration = field(default_factory=Configuration)
 
     kernel: Kernel = field(default_factory=Kernel)

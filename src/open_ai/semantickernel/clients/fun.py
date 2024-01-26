@@ -1,19 +1,14 @@
 from dataclasses import dataclass, field
 
-from semantic_kernel import Kernel
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.config.settings import Settings
-from src.open_ai.semantickernel.base.app import AppBase
+from src.open_ai.semantickernel.core.client.base import ClientBase
+from src.open_ai.semantickernel.plugins.fun import FunPlugin
 
 
 @dataclass
-class FunPlugin(AppBase):
-    functions: dict = field(init=False)  # dict[str, SKFunctionBase]
-
-    @property
-    def settings(self) -> Settings:
-        return self.config.settings
+class FunClient(ClientBase):
+    plugin: FunPlugin = field(init=False)
 
     def __post_init__(self):
         self.openai_client = AzureChatCompletion(
@@ -23,16 +18,10 @@ class FunPlugin(AppBase):
         )
 
         self.kernel.add_chat_service("gpt", self.openai_client)
-        self.functions = FunPlugin.import_semantic_plugin(self.kernel)
-
-    @staticmethod
-    def import_semantic_plugin(kernel: Kernel, parent_directory: str = "data/semantic_kernel/plugins") -> dict:  # dict[str, SKFunctionBase]
-        plugin_directory_name = "fun"
-        functions: dict = kernel.import_semantic_plugin_from_directory(parent_directory, plugin_directory_name)
-        return functions
+        self.plugin = FunPlugin(kernel=self.kernel)
 
     async def invoke(self, function_name: str, **kwargs):
-        fn = self.functions[function_name]
+        fn = self.plugin.functions[function_name]
         text = kwargs["input"]
         return fn(text)
 
