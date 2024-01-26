@@ -8,8 +8,8 @@ from src.open_ai.semantickernel.functions.summarize_five_words import SummarizeI
 
 
 async def run():
-    oSummarizer = SummarizerClient()
-    await oSummarizer.process_file(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
+    oSummarizerClient = SummarizerClient()
+    await oSummarizerClient.process_file(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
 
     file_paths = [
         "data/facts/laws/thermodynamics.txt",
@@ -18,7 +18,7 @@ async def run():
     ]
 
     for file_path in file_paths:
-        await oSummarizer.process_file(SummarizeIn1LineFunction, file_path)
+        await oSummarizerClient.process_file(SummarizeIn1LineFunction, file_path)
 
 
 async def main():
