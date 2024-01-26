@@ -7,7 +7,7 @@ from src.open_ai.semantickernel.core.function.base import FunctionBase
 from src.open_ai.semantickernel.functions import summarize_1_line, summarize_five_words
 
 # TODO dynamically load all modules in functions folder
-function_modules = [
+modules = [
     summarize_1_line,
     summarize_five_words,
 ]
@@ -21,9 +21,9 @@ class FunctionsProvier:
     instances: dict[type[FunctionBase], FunctionBase] = field(init=False)
 
     def __post_init__(self):
-        self.classes = {  # type: ignore
+        self.classes = {  # type
             name: item
-            for module in function_modules
+            for module in modules
             for name, item in inspect.getmembers(module)
             if inspect.isclass(item) and issubclass(item, FunctionBase) and item != FunctionBase
         }

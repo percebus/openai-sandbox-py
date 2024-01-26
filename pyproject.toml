@@ -40,9 +40,6 @@ check = true
 line-length = 150
 target-version = ["py311"]
 
-[tool.isort]
-profile = "black"
-
 [tool.pyright]
 defineConstant = { DEBUG = true }
 include = ["src"]

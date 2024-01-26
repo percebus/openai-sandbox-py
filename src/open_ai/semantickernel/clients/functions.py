@@ -9,7 +9,7 @@ from src.open_ai.semantickernel.core.function.provider import FunctionsProvier
 
 # SRC: https://github.com/microsoft/semantic-kernel/blob/main/python/README.md
 @dataclass
-class SummarizerClient(ClientBase):
+class FunctionsClient(ClientBase):
     functions_provider: FunctionsProvier = field(init=False)
 
     @property
