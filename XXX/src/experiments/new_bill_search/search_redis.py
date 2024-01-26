@@ -18,11 +18,7 @@ oRedis = cache.createRedis(config)
 
 
 def createVector(oEmbedding):
-    return (
-        numpy.array(oEmbedding)  # foreach
-        .astype(numpy.float32)  # convert cooridnate
-        .tobytes()
-    )
+    return numpy.array(oEmbedding).astype(numpy.float32).tobytes()  # foreach  # convert cooridnate
 
 
 def createQuery(top_n):

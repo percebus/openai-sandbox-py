@@ -19,6 +19,12 @@ line-ending = "auto"
 
 
 [lint]
+select = [
+    "F",  # Pyflakes
+    "E",  # a subset of the pycodestyle
+    "I"  # isort
+]
+
 fixable = ["ALL"]
 ignore = [
     "TD",  # TODO

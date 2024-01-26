@@ -49,9 +49,7 @@ def run():
     newDataFrame = prepare_data(oDataFrame)
     printing.pprint(newDataFrame)
 
-    newDataFrame["embedding"] = newDataFrame["text"].apply(
-        lambda s: query(s)  # pylint: disable=unnecessary-lambda
-    )
+    newDataFrame["embedding"] = newDataFrame["text"].apply(lambda s: query(s))  # pylint: disable=unnecessary-lambda
     printing.pprint(newDataFrame)
 
     json_string = newDataFrame.to_json(orient="records")
