@@ -13,7 +13,7 @@ class Settings(BaseSettings):
         env_file=(  # Each file overrides the previous one
             ".env.inexistant",  # Inexistant file to test that it doesn't break
             ".env",  # lowest precedence
-            ".env.openai",
+            ".env.openai.local",
             ".env.local",  # highest precedence
         ),
     )

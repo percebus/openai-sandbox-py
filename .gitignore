@@ -3,7 +3,6 @@ env/*.sh
 !.env
 .env.local
 .env.*.local
-.env.openai.gpt
 
 ##################################
 ### VisualStudioCode.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
