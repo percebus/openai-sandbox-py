@@ -9,17 +9,23 @@ repos:
       - id: prettier
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    # Ruff version.
     rev: v0.1.14
     hooks:
+      # Run the lint+fixer (not formatter).
+      - id: ruff
+        args: [--fix]
+        stages: [pre-commit]
+        types: [python]
+
       # Run the formatter.
       - id: ruff-format
         stages: [pre-commit]
+        types: [python]
 
       # Run the linter.
       - id: ruff
-        args: [--fix]
-        stages: [pre-push]
+        stages: [pre-commit]
+        types: [python]
 
   - repo: local
     hooks:
