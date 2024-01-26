@@ -1,0 +1,31 @@
+# https://pre-commit.com
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit, pre-push]
+fail_fast: true
+repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v3.1.0"
+    hooks:
+      - id: prettier
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.1.14
+    hooks:
+      # Run the formatter.
+      - id: ruff-format
+        stages: [pre-commit]
+
+      # Run the linter.
+      - id: ruff
+        args: [--fix]
+        stages: [pre-push]
+
+  - repo: local
+    hooks:
+      - id: poetry plugins
+        name: poetry plugins
+        entry: bash scripts/poetry/plugins/run.ba.sh
+        language: system
+        stages: [pre-commit]
+        types: [python]

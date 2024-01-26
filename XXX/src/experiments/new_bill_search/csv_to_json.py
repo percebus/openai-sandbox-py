@@ -27,18 +27,14 @@ def clean_data(oDataFrame):
 
 def filter_rows(oDataFrame, encoding="cl100k_base", max_tokens=8192):
     tokenizer = tiktoken.get_encoding(encoding)
-    oDataFrame["n_tokens"] = oDataFrame["text"].apply(
-        lambda x: len(tokenizer.encode(x))
-    )
+    oDataFrame["n_tokens"] = oDataFrame["text"].apply(lambda x: len(tokenizer.encode(x)))
     oDataFrame = oDataFrame[oDataFrame["n_tokens"] < max_tokens]
     return oDataFrame
 
 
 def prepare_data(oDataFrame):
     printing.pprint(oDataFrame)
-    subDataFrame = select_columns(
-        oDataFrame.copy(), columns=["text", "summary", "title"]
-    )
+    subDataFrame = select_columns(oDataFrame.copy(), columns=["text", "summary", "title"])
     cleanDataFrame = clean_data(subDataFrame.copy())
     filteredDataFrame = filter_rows(cleanDataFrame.copy())
     newDataFrame = filteredDataFrame  # .head(1) # Control how many rows

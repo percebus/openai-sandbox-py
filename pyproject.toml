@@ -24,11 +24,11 @@ semantic-kernel = "^0.4.6.dev0"
 tiktoken = "^0.4.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
-isort = "^5.12.0"
+pre-commit = "^3.6.0"
 pylint = "^2.17.4"
 pyright = "^1.1.348"
 pytest-dotenv = "^0.5.2"
+ruff = "^0.1.14"
 
 [tool.black]
 target-version = ["py311"]

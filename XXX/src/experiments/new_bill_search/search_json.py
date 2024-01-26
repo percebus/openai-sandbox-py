@@ -16,9 +16,7 @@ query = api.create_embedding_query(config)
 
 def search(prompt, oDataFrame, top_n=3):
     question = query(prompt)
-    oDataFrame["similarities"] = oDataFrame["embedding"].apply(
-        lambda bill: cosine_similarity(bill, question)
-    )
+    oDataFrame["similarities"] = oDataFrame["embedding"].apply(lambda bill: cosine_similarity(bill, question))
 
     return oDataFrame.sort_values("similarities", ascending=False).head(top_n)
 

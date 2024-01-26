@@ -1,5 +1,5 @@
 [format]
-max-line-length = 88
+max-line-length = 150
 
 [MASTER]
 disable=

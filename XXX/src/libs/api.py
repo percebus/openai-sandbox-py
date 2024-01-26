@@ -67,9 +67,7 @@ def create_chat(config: dict, system_prompt: str = None):
         "stop": config.get("OPENAI_COMPLETION_STOP"),
     }
 
-    system_message = (
-        {"role": "system", "content": system_prompt} if system_prompt else None
-    )
+    system_message = {"role": "system", "content": system_prompt} if system_prompt else None
     system_messages = [system_message] if system_message else []
 
     def createChatCompletion(prompt, messages=[]):

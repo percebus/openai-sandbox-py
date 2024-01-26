@@ -4,7 +4,6 @@ from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
 from src.open_ai.config.configuration import Configuration
 from src.open_ai.config.settings import Settings
-from src.open_ai.libs.printing import pprint
 from src.open_ai.semantickernel.functions import summarize
 
 
@@ -23,7 +22,7 @@ def process_file(file_path: str, semantic_function):
 
     #  Object of type "SKFunctionBase" is not callable
     summary = semantic_function(contents)  # type: ignore
-    print('\nTL;DR:')
+    print("\nTL;DR:")
     print(summary)
 
 
@@ -37,7 +36,6 @@ def run(settings: Settings):
     oKernel: Kernel = createKernel(oAzureChatCompletion)
     summarize_in_5_words = summarize.create_semantic_function__summarize_in_5_words(oKernel)
     summarize_in_1_line_with_fewest_words = summarize.create_semantic_function__summarize_in_1_line_with_fewest_words(oKernel)
-
 
     process_file("data/facts/laws/asimov.txt", summarize_in_5_words)
 

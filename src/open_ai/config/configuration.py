@@ -5,4 +5,4 @@ from src.open_ai.config.settings import Settings
 
 @dataclass
 class Configuration:
-    settings: Settings = field(default_factory=Settings) # type: ignore
+    settings: Settings = field(default_factory=Settings)  # type: ignore

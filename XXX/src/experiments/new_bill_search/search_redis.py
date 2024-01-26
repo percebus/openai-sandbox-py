@@ -40,9 +40,7 @@ def search(prompt, top_n=3):
     redisQuery = createQuery(top_n)
     oResult = None
     try:
-        oResult = oRedis.ft("bills").search(
-            redisQuery, query_params={"vector": queryVector}
-        )
+        oResult = oRedis.ft("bills").search(redisQuery, query_params={"vector": queryVector})
     except ResponseError as redisException:
         print("Error calling Redis search: ")
         print(redisException)
