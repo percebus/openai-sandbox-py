@@ -13,18 +13,20 @@ repos:
     hooks:
       # Run the lint+fixer (not formatter).
       - id: ruff
+        name: ruff --fix
         args: [--fix]
         stages: [pre-commit]
         types: [python]
 
       # Run the formatter.
       - id: ruff-format
+        name: ruff format
         stages: [pre-commit]
         types: [python]
 
       # Run the linter.
       - id: ruff
-        stages: [pre-commit]
+        stages: [pre-push]
         types: [python]
 
   - repo: local
