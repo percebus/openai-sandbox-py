@@ -6,7 +6,8 @@ from semantic_kernel import Kernel
 from src.open_ai.semantickernel.core.function.base import FunctionBase
 from src.open_ai.semantickernel.functions import summarize_1_line, summarize_five_words
 
-# TODO dynamically load all modules in functions folder
+# TODO dynamically load all modules in
+# from src.open_ai.semantickernel.functions
 modules = [
     summarize_1_line,
     summarize_five_words,
@@ -27,5 +28,8 @@ class FunctionsProvier:
             for name, item in inspect.getmembers(module)
             if inspect.isclass(item) and issubclass(item, FunctionBase) and item != FunctionBase
         }
+
+        classes_names = self.classes.keys()
+        print(f"loaded functions: {', '.join(classes_names)}")
 
         self.instances = {Function: Function(kernel=self.kernel) for Function in self.classes.values()}

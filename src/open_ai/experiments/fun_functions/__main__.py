@@ -2,12 +2,12 @@ import asyncio
 
 from dotenv import load_dotenv
 
-from src.open_ai.semantickernel.clients.fun import FunClient
+from src.open_ai.semantickernel.agents.fun import FunAgent
 
 
 async def run():
-    oFunClient = FunClient()
-    await oFunClient.run("joke", input="time travel to dinosaur age")
+    oFunAgent = FunAgent()
+    await oFunAgent.run_async("joke", input="time travel to dinosaur age")
 
 
 async def main():

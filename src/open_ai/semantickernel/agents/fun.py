@@ -2,12 +2,12 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.semantickernel.core.client.base import ClientBase
+from src.open_ai.semantickernel.core.agent.open_ai import OpenAISemanticAgentBase
 from src.open_ai.semantickernel.plugins.fun import FunPlugin
 
 
 @dataclass
-class FunClient(ClientBase):
+class FunAgent(OpenAISemanticAgentBase):
     plugin: FunPlugin = field(init=False)
 
     def __post_init__(self):
@@ -20,16 +20,16 @@ class FunClient(ClientBase):
         self.kernel.add_chat_service("gpt", self.openai_client)
         self.plugin = FunPlugin(kernel=self.kernel)
 
-    async def invoke(self, function_name: str, **kwargs):
+    async def invoke_async(self, function_name: str, **kwargs):
         fn = self.plugin.functions[function_name]
         text = kwargs["input"]
         return fn(text)
 
-    async def run(self, function_name: str, **kwargs):
+    async def run_async(self, function_name: str, **kwargs):
         print(f'kwargs: "{kwargs}"')
 
         #  Object of type "SKFunctionBase" is not callable
-        result = await self.invoke(function_name, **kwargs)  # type: ignore
+        result = await self.invoke_async(function_name, **kwargs)  # type: ignore
 
         print("Result:")
         print(result)

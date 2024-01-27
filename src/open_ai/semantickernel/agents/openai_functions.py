@@ -2,14 +2,14 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.semantickernel.core.client.base import ClientBase
+from src.open_ai.semantickernel.core.agent.open_ai import OpenAISemanticAgentBase
 from src.open_ai.semantickernel.core.function.base import FunctionBase
 from src.open_ai.semantickernel.core.function.provider import FunctionsProvier
 
 
 # SRC: https://github.com/microsoft/semantic-kernel/blob/main/python/README.md
 @dataclass
-class FunctionsClient(ClientBase):
+class OpenAIFunctionsAgent(OpenAISemanticAgentBase):
     functions_provider: FunctionsProvier = field(init=False)
 
     @property
@@ -27,7 +27,7 @@ class FunctionsClient(ClientBase):
 
         self.functions_provider = FunctionsProvier(kernel=self.kernel)
 
-    async def process_file(self, Function: type[FunctionBase], file_path: str):
+    async def process_file_async(self, Function: type[FunctionBase], file_path: str):
         with open(file_path, encoding="utf-8") as oFile:
             contents = oFile.read()
 
@@ -39,3 +39,5 @@ class FunctionsClient(ClientBase):
         summary = oFunction.semantic_function(contents)  # type: ignore
         print("\nTL;DR:")
         print(summary)
+
+        return summary

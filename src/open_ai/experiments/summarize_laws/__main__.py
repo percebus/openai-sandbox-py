@@ -2,14 +2,14 @@ import asyncio
 
 from dotenv import load_dotenv
 
-from src.open_ai.semantickernel.clients.functions import FunctionsClient
+from src.open_ai.semantickernel.agents.openai_functions import OpenAIFunctionsAgent
 from src.open_ai.semantickernel.functions.summarize_1_line import SummarizeIn1LineFunction
 from src.open_ai.semantickernel.functions.summarize_five_words import SummarizeIn5WordsFunction
 
 
 async def run():
-    oFunctionsClient = FunctionsClient()
-    await oFunctionsClient.process_file(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
+    oOpenAIFunctionsAgent = OpenAIFunctionsAgent()
+    await oOpenAIFunctionsAgent.process_file_async(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
 
     file_paths = [
         "data/facts/laws/thermodynamics.txt",
@@ -18,7 +18,7 @@ async def run():
     ]
 
     for file_path in file_paths:
-        await oFunctionsClient.process_file(SummarizeIn1LineFunction, file_path)
+        await oOpenAIFunctionsAgent.process_file_async(SummarizeIn1LineFunction, file_path)
 
 
 async def main():
