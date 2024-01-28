@@ -2,18 +2,18 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.semantickernel.core.agent.open_ai import OpenAISemanticAgentBase
-from src.open_ai.semantickernel.core.function.base import FunctionBase
+from src.open_ai.semantickernel.core.agent.semantic import SemanticAgentBase
 from src.open_ai.semantickernel.core.function.provider import FunctionsProvier
+from src.open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
 
 
 # SRC: https://github.com/microsoft/semantic-kernel/blob/main/python/README.md
 @dataclass
-class OpenAIFunctionsAgent(OpenAISemanticAgentBase):
+class SemanticFunctionsAgent(SemanticAgentBase):
     functions_provider: FunctionsProvier = field(init=False)
 
     @property
-    def functions(self) -> dict[type[FunctionBase], FunctionBase]:
+    def functions(self) -> dict[type[SemanticFunctionBase], SemanticFunctionBase]:
         return self.functions_provider.instances
 
     def __post_init__(self):
@@ -27,7 +27,7 @@ class OpenAIFunctionsAgent(OpenAISemanticAgentBase):
 
         self.functions_provider = FunctionsProvier(kernel=self.kernel)
 
-    async def process_file_async(self, Function: type[FunctionBase], file_path: str):
+    async def process_file_async(self, Function: type[SemanticFunctionBase], file_path: str):
         with open(file_path, encoding="utf-8") as oFile:
             contents = oFile.read()
 
@@ -36,7 +36,7 @@ class OpenAIFunctionsAgent(OpenAISemanticAgentBase):
 
         #  Object of type "SKFunctionBase" is not callable
         oFunction = self.functions[Function]
-        summary = oFunction.semantic_function(contents)  # type: ignore
+        summary = oFunction.function(contents)  # type: ignore
         print("\nTL;DR:")
         print(summary)
 

@@ -5,7 +5,7 @@ from semantic_kernel import Kernel
 
 
 @dataclass
-class PluginBase(ABC):
+class SemanticPluginBase(ABC):
     kernel: Kernel = field(default_factory=Kernel)
     parent_directory: str = field(default="data/semantic_kernel/plugins")
     plugin_directory_name: str = field(init=False)

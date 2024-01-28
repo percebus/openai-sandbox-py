@@ -1,13 +1,12 @@
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.core.agent.semantic import SemanticAgentBase
-from src.open_ai.semantickernel.plugins.math import MathPlugin
+from src.open_ai.semantickernel.core.agent.native import NativeAgentBase
+from src.open_ai.semantickernel.plugins.native.math import MathPlugin
 
 
 @dataclass
-class MathAgent(SemanticAgentBase):
+class MathAgent(NativeAgentBase):
     math_plugin: MathPlugin = field(default_factory=MathPlugin)
-    functions: dict = field(init=False)
 
     def __post_init__(self):
         self.functions = self.kernel.import_plugin(self.math_plugin, plugin_name="math")

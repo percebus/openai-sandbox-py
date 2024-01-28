@@ -2,7 +2,7 @@ import asyncio
 
 from dotenv import load_dotenv
 
-from src.open_ai.semantickernel.agents.fun import FunAgent
+from src.open_ai.semantickernel.agents.semantic.fun import FunAgent
 
 
 async def run():

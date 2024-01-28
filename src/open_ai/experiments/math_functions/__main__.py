@@ -1,4 +1,4 @@
-from src.open_ai.semantickernel.agents.math import MathAgent
+from src.open_ai.semantickernel.agents.native.math import MathAgent
 
 
 async def run():

@@ -3,8 +3,10 @@ import math
 from semantic_kernel.orchestration.sk_context import SKContext
 from semantic_kernel.plugin_definition import sk_function, sk_function_context_parameter
 
+from src.open_ai.semantickernel.core.plugin.native import NativePluginBase
 
-class MathPlugin:
+
+class MathPlugin(NativePluginBase):
     @sk_function(
         name="Sqrt",
         description="Takes the square root of a number",

@@ -2,12 +2,12 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.semantickernel.core.agent.open_ai import OpenAISemanticAgentBase
-from src.open_ai.semantickernel.plugins.fun import FunPlugin
+from src.open_ai.semantickernel.core.agent.semantic import SemanticAgentBase
+from src.open_ai.semantickernel.plugins.semantic.fun import FunPlugin
 
 
 @dataclass
-class FunAgent(OpenAISemanticAgentBase):
+class FunAgent(SemanticAgentBase):
     plugin: FunPlugin = field(init=False)
 
     def __post_init__(self):
