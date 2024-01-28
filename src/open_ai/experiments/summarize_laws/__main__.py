@@ -8,8 +8,8 @@ from src.open_ai.semantickernel.functions.semantic.summarize_five_words import S
 
 
 async def run():
-    oOpenAIFunctionsAgent = SemanticFunctionsAgent()
-    await oOpenAIFunctionsAgent.process_file_async(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
+    oSemanticFunctionsAgent = SemanticFunctionsAgent()
+    await oSemanticFunctionsAgent.process_file_async(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
 
     file_paths = [
         "data/facts/laws/thermodynamics.txt",
@@ -18,7 +18,7 @@ async def run():
     ]
 
     for file_path in file_paths:
-        await oOpenAIFunctionsAgent.process_file_async(SummarizeIn1LineFunction, file_path)
+        await oSemanticFunctionsAgent.process_file_async(SummarizeIn1LineFunction, file_path)
 
 
 async def main():
