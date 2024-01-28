@@ -28,7 +28,7 @@ class FunAgent(SemanticAgentBase):
     async def run_async(self, function_name: str, **kwargs):
         print(f'kwargs: "{kwargs}"')
 
-        #  Object of type "SKFunctionBase" is not callable
+        #  Object of type "KernelFunctionBase" is not callable
         result = await self.invoke_async(function_name, **kwargs)  # type: ignore
 
         print("Result:")

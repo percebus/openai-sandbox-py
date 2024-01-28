@@ -20,7 +20,7 @@ pydantic-settings = "^2.1.0"
 python-dotenv = "^1.0.0"
 redis = "^4.5.5"
 scikit-learn = "^1.2.2"
-semantic-kernel = "0.4.6.dev0"
+semantic-kernel = "0.4.7.dev"
 tiktoken = "^0.4.0"
 
 [tool.poetry.group.dev.dependencies]

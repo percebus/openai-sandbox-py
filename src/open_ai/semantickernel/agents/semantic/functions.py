@@ -34,7 +34,7 @@ class SemanticFunctionsAgent(SemanticAgentBase):
         print(f"\n\n == {file_path} =================================")
         print(contents)
 
-        #  Object of type "SKFunctionBase" is not callable
+        #  Object of type "KernelFunctionBase" is not callable
         oFunction = self.functions[Function]
         summary = oFunction.function(contents)  # type: ignore
         print("\nTL;DR:")
