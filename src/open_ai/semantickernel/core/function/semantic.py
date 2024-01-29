@@ -1,3 +1,4 @@
+from abc import ABC
 from dataclasses import dataclass, field
 
 from semantic_kernel import KernelFunctionBase
@@ -6,7 +7,7 @@ from src.open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass
-class SemanticFunctionBase(KernelBase):
+class SemanticFunctionBase(KernelBase, ABC):
     prompt: str = field(init=False)
     function: KernelFunctionBase = field(init=False)
 

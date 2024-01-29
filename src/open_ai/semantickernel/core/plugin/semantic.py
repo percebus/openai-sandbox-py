@@ -1,14 +1,14 @@
 from abc import ABC
 from dataclasses import dataclass, field
 
-from semantic_kernel import Kernel
+from src.open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass
-class SemanticPluginBase(ABC):
-    kernel: Kernel = field(default_factory=Kernel)
+class SemanticPluginBase(KernelBase, ABC):
     parent_directory: str = field(default="data/semantic_kernel/plugins")
     plugin_directory_name: str = field(init=False)
+
     functions: dict = field(init=False)  # dict[str, KernelFunctionBase]
 
     def __post_init__(self):

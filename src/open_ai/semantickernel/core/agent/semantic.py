@@ -1,3 +1,4 @@
+from abc import ABC
 from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
@@ -8,7 +9,7 @@ from src.open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass
-class SemanticAgentBase(KernelBase):
+class SemanticAgentBase(KernelBase, ABC):
     config: Configuration = field(default_factory=Configuration)
     openai_client: AzureChatCompletion = field(init=False)
 

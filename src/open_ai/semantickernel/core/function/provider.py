@@ -1,8 +1,7 @@
 import inspect
 from dataclasses import dataclass, field
 
-from semantic_kernel import Kernel
-
+from src.open_ai.semantickernel.core.base import KernelBase
 from src.open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
 from src.open_ai.semantickernel.functions.semantic import summarize_1_line, summarize_five_words
 
@@ -15,9 +14,7 @@ modules = [
 
 
 @dataclass
-class FunctionsProvier:
-    kernel: Kernel = field(default_factory=Kernel)
-
+class FunctionsProvier(KernelBase):
     classes: dict[str, SemanticFunctionBase] = field(init=False)
     instances: dict[type[SemanticFunctionBase], SemanticFunctionBase] = field(init=False)
 
