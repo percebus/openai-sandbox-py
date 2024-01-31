@@ -2,6 +2,7 @@
   "name": "openai-sandbox-py",
   "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "devDependencies": {
-    "Azure-OpenAI-Docs-Samples": "git@github.com:Azure-Samples/Azure-OpenAI-Docs-Samples.git#main"
+    "Azure-OpenAI-Docs-Samples": "git@github.com:Azure-Samples/Azure-OpenAI-Docs-Samples.git#main",
+    "BotBuilder-Samples": "git@github.com:microsoft/BotBuilder-Samples.git#main"
   }
 }
