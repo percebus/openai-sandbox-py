@@ -1,0 +1,3 @@
+I want to build a web game with jiggle phyisics where one throws 2 boots strung together by their laces and try to do a parabolic shoot to make it land on an electric cable.
+
+Please provide the code so I can view it in my browser
