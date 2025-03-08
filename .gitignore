@@ -4,6 +4,10 @@ env/*.sh
 .env.local
 .env.*.local
 
+# commons
+repositories/
+_scripts/
+
 ##################################
 ### VisualStudioCode.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 ##################################

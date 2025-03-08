@@ -1,0 +1,21 @@
+name: "[C]ontinuous [I]ntegration"
+
+on:
+  push:
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: percebus/github-actions-common/.github/actions/checkout@main
+      - uses: percebus/github-actions-python/.github/actions/python_setup@main
+
+      - uses: percebus/github-actions-pip/.github/actions/pip_install_upgrade@main
+      - uses: percebus/github-actions-pipx/.github/actions/pipx_install@main
+
+      - uses: percebus/github-actions-poetry/.github/actions/poetry_self_add_plugins@main
+      - uses: percebus/github-actions-poetry/.github/actions/poetry_install@main
+
+      - uses: percebus/github-actions-pip/.github/actions/pip_freeze@main
