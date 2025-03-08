@@ -3,8 +3,12 @@ import asyncio
 from dotenv import load_dotenv
 
 from src.open_ai.semantickernel.agents.semantic.functions import SemanticFunctionsAgent
-from src.open_ai.semantickernel.functions.semantic.summarize_1_line import SummarizeIn1LineFunction
-from src.open_ai.semantickernel.functions.semantic.summarize_five_words import SummarizeIn5WordsFunction
+from src.open_ai.semantickernel.functions.semantic.summarize_1_line import (
+    SummarizeIn1LineFunction,
+)
+from src.open_ai.semantickernel.functions.semantic.summarize_five_words import (
+    SummarizeIn5WordsFunction,
+)
 
 
 async def run():
