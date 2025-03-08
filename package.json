@@ -7,12 +7,11 @@
     "test": "tests"
   },
   "scripts": {
-    "pip:upgrade": "python -m pip install --upgrade -v -r requirements.upgrade.txt",
     "npm:install:global:all": "npm install --location=global redis-cli open-cli",
     "npm:install:global:ci": "npm install --location=global redis-cli",
-    "setup": "npm run pip:upgrade && npm run pipx:install && npm run npm:install:global:all",
-    "setup:ci": "npm run pip:upgrade && npm run pipx:install && npm run npm:install:global:ci",
-    "pipx:install": "bash scripts/pipx/install.ba.sh",
+    "setup": "npm run npm:install:global:all",
+    "setup:ci": "npm run npm:install:global:ci",
+    "FIXME_postinstall": "bash scripts/install.ba.sh",
     "python:isort": "python -m isort ./src",
     "python:black": "python -m black ./src",
     "python:pylint": "python -m pylint ./src",
