@@ -2,3 +2,7 @@
 
 # commons/scripts
 commons repositories/commons https://github.com/percebus/commons.git main
+
+# Examples
+Azure-OpenAI-Docs-Samples repositories/Azure-OpenAI-Docs-Samples https://github.com/Azure-Samples/Azure-OpenAI-Docs-Samples.git main
+# BotBuilder-Samples repositories/BotBuilder-Samples https://github.com/github.com/microsoft/BotBuilder-Samples.git main # TODO?
