@@ -44,9 +44,9 @@ def load_data(bills):
 
 
 def run():
-    folder = "./data/prompting/text/embedding/billing"
+    folder = "./assets/prompting/text/embedding/billing"
 
-    with open(f"{folder}/data/bills.json", encoding="utf-8") as oFile:
+    with open(f"{folder}/assets/bills.json", encoding="utf-8") as oFile:
         json_string = oFile.read()
     bills = json.loads(json_string)
 

@@ -43,7 +43,7 @@ def prepare_data(oDataFrame):
 
 
 def run():
-    folder = "./data/prompting/text/embedding/billing"
+    folder = "./assets/prompting/text/embedding/billing"
 
     oDataFrame = pandas.read_csv(f"{folder}/samples/bill_sum_data.csv")
     newDataFrame = prepare_data(oDataFrame)
@@ -53,7 +53,7 @@ def run():
     printing.pprint(newDataFrame)
 
     json_string = newDataFrame.to_json(orient="records")
-    with open(f"{folder}/data/bills.json", "w", encoding="utf-8") as destFile:
+    with open(f"{folder}/assets/bills.json", "w", encoding="utf-8") as destFile:
         destFile.write(json_string)
 
 

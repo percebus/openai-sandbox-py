@@ -6,7 +6,7 @@ from src.open_ai.semantickernel.core.base import KernelBase
 
 @dataclass
 class SemanticPluginBase(KernelBase, ABC):
-    parent_directory: str = field(default="data/semantic_kernel/plugins")
+    parent_directory: str = field(default="assets/semantic_kernel/plugins")
     plugin_directory_name: str = field(init=False)
 
     functions: dict = field(init=False)  # dict[str, KernelFunctionBase]

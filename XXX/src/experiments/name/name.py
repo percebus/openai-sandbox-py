@@ -14,7 +14,7 @@ config = env.parse(ENV)
 
 
 def run():
-    folder = "./data/prompting/chat/friendly"
+    folder = "./assets/prompting/chat/friendly"
 
     with open(f"{folder}/system/friendly.txt", encoding="utf-8") as oFile:
         system_prompt = oFile.read()

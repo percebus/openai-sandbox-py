@@ -13,7 +13,7 @@ query = api.create_query(config)
 
 
 def run():
-    folder = "./data/prompting/text/inferring/sentiment/Tweet"
+    folder = "./assets/prompting/text/inferring/sentiment/Tweet"
     with open(f"{folder}/samples/trip.txt", encoding="utf-8") as oFile:
         text = oFile.read()
 

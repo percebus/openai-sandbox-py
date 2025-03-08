@@ -15,7 +15,7 @@ ask = api.create_chat(config)
 
 
 def run():
-    folder = "./data/prompting/chat/jester"
+    folder = "./assets/prompting/chat/jester"
 
     # with open(f"{folder}/system/robot.txt", encoding="utf-8") as oFile:
     # with open(f"{folder}/system/Alpha.txt", encoding="utf-8") as oFile:

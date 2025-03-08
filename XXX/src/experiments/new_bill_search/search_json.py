@@ -22,12 +22,12 @@ def search(prompt, oDataFrame, top_n=3):
 
 
 def run():
-    folder = "./data/prompting/text/embedding/billing"
+    folder = "./assets/prompting/text/embedding/billing"
 
     with open(f"{folder}/prompts/cable.txt", encoding="utf-8") as oFile:
         prompt = oFile.read()
 
-    oDataFrame = pandas.read_json(f"{folder}/data/bills.json")
+    oDataFrame = pandas.read_json(f"{folder}/assets/bills.json")
     printing.pprint(oDataFrame)
 
     resultDataFrame = search(prompt, oDataFrame)

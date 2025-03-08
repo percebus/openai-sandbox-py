@@ -13,7 +13,7 @@ query = api.create_query(config)
 
 
 def run():
-    folder = "./data/prompting/text/translate/en"
+    folder = "./assets/prompting/text/translate/en"
     with open(f"{folder}/samples/hello.txt", encoding="utf-8") as oFile:
         text = oFile.read()
 

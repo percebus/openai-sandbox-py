@@ -9,12 +9,12 @@ from src.open_ai.semantickernel.functions.semantic.summarize_five_words import S
 
 async def run():
     oSemanticFunctionsAgent = SemanticFunctionsAgent()
-    await oSemanticFunctionsAgent.process_file_async(SummarizeIn5WordsFunction, "data/facts/laws/asimov.txt")
+    await oSemanticFunctionsAgent.process_file_async(SummarizeIn5WordsFunction, "assets/facts/laws/asimov.txt")
 
     file_paths = [
-        "data/facts/laws/thermodynamics.txt",
-        "data/facts/laws/motion.txt",
-        "data/facts/laws/universal_gravitation.txt",
+        "assets/facts/laws/thermodynamics.txt",
+        "assets/facts/laws/motion.txt",
+        "assets/facts/laws/universal_gravitation.txt",
     ]
 
     for file_path in file_paths:
