@@ -1,4 +1,6 @@
 !env/*.sample
+!scripts/**
+!scripts/env/
 env/*.sh
 !.env
 .env.local

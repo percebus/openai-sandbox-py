@@ -4,9 +4,9 @@ on:
   push:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
-
 jobs:
-  default:
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
