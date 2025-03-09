@@ -2,6 +2,8 @@
 
 [`TODO`s](./TODO.md) | [`LICENSE`](./LICENSE.md)
 
+[![[C]ontinuous [I]ntegration](https://github.com/percebus/openai-sandbox-py/actions/workflows/always.yml/badge.svg)](https://github.com/percebus/openai-sandbox-py/actions/workflows/always.yml)
+
 ## Responsible AI
 
 Usage of Azure OpenAI should follow the six Microsoft [AI principles](https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai):

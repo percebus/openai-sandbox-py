@@ -2,7 +2,7 @@
 name = "openai-sandbox-py"
 version = "0.1.0"
 description = ""
-authors = ["Juan Guerrero <JCystems@GMail.com>"]
+authors = ["Juan Guerrero <Some@Email.com>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
