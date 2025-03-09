@@ -21,6 +21,7 @@ steps:
   - name: pypyr.steps.call
     in:
       call:
+        - poetry_sort
         - ruff
 
   - name: pypyr.steps.shell
@@ -36,7 +37,7 @@ prettier:
     in:
       cmd: "npx prettier {path} --write"
 
-uv-sort:
+poetry_sort:
   - name: pypyr.steps.echo
     in:
       echoMe: === poetry sort ===============================================
@@ -50,11 +51,11 @@ ruff:
       echoMe: === ruff check --fix ==========================================
   - name: pypyr.steps.shell
     in:
-      cmd: pipx run -- ruff check --fix {path}
+      cmd: ruff check --fix {path}
 
   - name: pypyr.steps.echo
     in:
       echoMe: === ruff format --fix =========================================
   - name: pypyr.steps.shell
     in:
-      cmd: pipx run -- ruff format {path}
+      cmd: ruff format {path}

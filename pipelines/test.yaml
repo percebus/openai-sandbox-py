@@ -2,7 +2,7 @@ context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.echo
     in:
-      echoMe: "= pypyr test ================================================"
+      echoMe: = pypyr test ================================================
   - name: pypyr.steps.default
     comment: set default values for optional cli inputs
     in:
@@ -18,7 +18,7 @@ steps:
   - name: pypyr.steps.shell
     run: "{lint}"
     in:
-      cmd: "pipx run -- pypyr lint path={path} npm={npm} stats={stats}"
+      cmd: "pypyr lint path={path} npm={npm} stats={stats}"
 
   - name: pypyr.steps.call
     in:
@@ -35,11 +35,11 @@ test:
     run: "{integration}"
     in:
       set:
-        markers: "integration"
+        markers: integration
 
   - name: pypyr.steps.echo
     in:
       echoMe: "=== pytest:{markers} ======================================="
   - name: pypyr.steps.shell
     in:
-      cmd: uv run pytest {PYTEST_CLI_ARGS} -m "{markers}"
+      cmd: pytest {PYTEST_CLI_ARGS} -m "{markers}"

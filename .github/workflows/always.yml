@@ -18,4 +18,10 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/poetry_self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/poetry_install@main
 
+      - name: pip install .
+        run: pip install .
+
       - uses: percebus/github-actions-pip/.github/actions/pip_freeze@main
+
+      - name: pypyr ci
+        run: pypyr ci

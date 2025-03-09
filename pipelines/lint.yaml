@@ -45,7 +45,7 @@ ruff:
       echoMe: === ruff check ==============================================
   - name: pypyr.steps.shell
     in:
-      cmd: pipx run -- ruff check {path}
+      cmd: ruff check {path}
 
 pyright:
   - name: pypyr.steps.echo
@@ -53,7 +53,7 @@ pyright:
       echoMe: === pyright =================================================
   - name: pypyr.steps.shell
     in:
-      cmd: pipx run -- pyright --warnings
+      cmd: pyright --warnings
 
 pylint:
   - name: pypyr.steps.echo
@@ -61,4 +61,4 @@ pylint:
       echoMe: === pylint ==================================================
   - name: pypyr.steps.shell
     in:
-      cmd: "pipx run -- pylint {PYLINT_CLI_ARGS} src"
+      cmd: "pylint {PYLINT_CLI_ARGS} src"
