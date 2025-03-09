@@ -10,6 +10,9 @@ env/*.sh
 repositories/
 _scripts/
 
+test*.xml
+
+
 ##################################
 ### VisualStudioCode.gitignore ### SRC: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 ##################################
