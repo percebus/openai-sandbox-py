@@ -28,7 +28,9 @@ jobs:
       #   run: pipx run -- pypyr lint stats=True
 
       - name: pypyr test
-        run: pipx run -- pypyr ci lint=False
+        run: |
+          pip install pytest
+          pipx run -- pypyr ci lint=False
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
