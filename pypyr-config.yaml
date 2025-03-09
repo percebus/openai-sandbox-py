@@ -1,0 +1,24 @@
+shortcuts:
+  integration:
+    pipeline_name: test
+    args:
+      path: .
+      clean: False
+      lint: False
+      integration: True
+
+  dev:
+    pipeline_name: qa
+    args:
+      path: .
+      clean: False
+      stats: False
+      integration: False
+
+  ci:
+    pipeline_name: qa
+    args:
+      path: .
+      npm: False
+      style: False
+      integration: False

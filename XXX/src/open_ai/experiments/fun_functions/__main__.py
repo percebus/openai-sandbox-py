@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from src.open_ai.semantickernel.agents.semantic.fun import FunAgent
 
 
-async def run():
+async def run() -> None:
     oFunAgent = FunAgent()
     await oFunAgent.run_async("joke", input="time travel to dinosaur age")
 
