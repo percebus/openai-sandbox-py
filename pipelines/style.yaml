@@ -43,7 +43,7 @@ poetry_sort:
       echoMe: === poetry sort ===============================================
   - name: pypyr.steps.shell
     in:
-      cmd: poetry sort
+      cmd: pipx run -- poetry sort
 
 ruff:
   - name: pypyr.steps.echo
@@ -51,11 +51,11 @@ ruff:
       echoMe: === ruff check --fix ==========================================
   - name: pypyr.steps.shell
     in:
-      cmd: ruff check --fix {path}
+      cmd: python -m ruff check --fix {path}
 
   - name: pypyr.steps.echo
     in:
       echoMe: === ruff format --fix =========================================
   - name: pypyr.steps.shell
     in:
-      cmd: ruff format {path}
+      cmd: python -m ruff format {path}
