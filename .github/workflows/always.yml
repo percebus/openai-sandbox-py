@@ -23,5 +23,14 @@ jobs:
 
       - uses: percebus/github-actions-pip/.github/actions/pip_freeze@main
 
-      - name: pypyr ci
-        run: pypyr ci
+      # TODO
+      # - name: pypyr lint
+      #   run: pipx run -- pypyr lint stats=True
+
+      - name: pypyr test
+        run: pipx run -- pypyr ci lint=False
+
+      - uses: percebus/github-actions-testing/.github/actions/junit@main
+        with:
+          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+          files_pattern: test-results.xml
