@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from open_ai.libs.printing import pprint
+from sandbox.libs.printing import pprint
 
 
 class Settings(BaseSettings):
