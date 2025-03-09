@@ -42,4 +42,4 @@ test:
       echoMe: "=== pytest:{markers} ======================================="
   - name: pypyr.steps.shell
     in:
-      cmd: python -m pytest {PYTEST_CLI_ARGS} -m "{markers}"
+      cmd: poetry run pytest {PYTEST_CLI_ARGS} -m "{markers}"

@@ -11,7 +11,7 @@ bash ${scripts_path}/prepare.ba.sh
 bash _scripts/setup.ba.sh
 
 poetry install
-python -m pip install -e .
+poetry run pip install -e .
 
 set +x
 set +e
