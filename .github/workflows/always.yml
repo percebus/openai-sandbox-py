@@ -4,6 +4,15 @@ on:
   push:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
+env:
+  PYRIGHT_PYTHON_FORCE_VERSION: latest
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+  security-events: write
+
 jobs:
   verify:
     name: Verify
@@ -28,8 +37,7 @@ jobs:
       #   run: pipx run -- pypyr lint stats=True
 
       - name: pypyr test
-        run: |
-          pipx run -- pypyr ci lint=False
+        run: pipx run -- pypyr ci lint=False
 
       - uses: percebus/github-actions-testing/.github/actions/junit@main
         with:
