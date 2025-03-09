@@ -54,7 +54,7 @@ def run():
     print(f"Found {oResult.total} results:")
     for idx, bill in enumerate(oResult.docs):
         score = 1 - float(bill.vector_score)
-        print(f"\t{idx}. {bill.title} (Score: {round(score, 3) })")
+        print(f"\t{idx}. {bill.title} (Score: {round(score, 3)})")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,64 @@
+context_parser: pypyr.parser.keyvaluepairs
+steps:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "= pypyr lint ================================================"
+  - name: pypyr.steps.default
+    comment: set default values for optional cli inputs
+    in:
+      defaults:
+        path: .
+        npm: True
+        stats: False
+        PYLINT_CLI_ARGS: ""
+
+  - name: pypyr.steps.set
+    run: "{stats}"
+    in:
+      set:
+        PYLINT_CLI_ARGS: --report y
+
+  - name: pypyr.steps.call
+    run: "{npm}"
+    in:
+      call:
+        - prettier
+
+  - name: pypyr.steps.call
+    in:
+      call:
+        - ruff
+        - pyright
+        - pylint
+
+prettier:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: === npx prettier --check ====================================
+  - name: pypyr.steps.shell
+    in:
+      cmd: "npx prettier {path} --check"
+
+ruff:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: === ruff check ==============================================
+  - name: pypyr.steps.shell
+    in:
+      cmd: pipx run -- ruff check {path}
+
+pyright:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: === pyright =================================================
+  - name: pypyr.steps.shell
+    in:
+      cmd: pipx run -- pyright --warnings
+
+pylint:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: === pylint ==================================================
+  - name: pypyr.steps.shell
+    in:
+      cmd: "pipx run -- pylint {PYLINT_CLI_ARGS} src"

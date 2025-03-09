@@ -1,0 +1,43 @@
+# SEE: https://pypyr.io/docs/getting-started/conditional-logic/#multiple-steps-with-the-same-condition
+context_parser: pypyr.parser.keyvaluepairs
+steps:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "= pypyr qa ==================================================="
+  - name: pypyr.steps.default
+    comment: set default values for optional cli inputs
+    in:
+      defaults:
+        path: .
+        npm: True
+        clean: True
+        style: True
+        lint: True
+        test: True
+        integration: True
+        stats: True
+
+  - name: pypyr.steps.shell
+    run: "{clean}"
+    in:
+      cmd: "pipx run -- pypyr clean path={path}"
+
+  - name: pypyr.steps.shell
+    run: "{style}"
+    in:
+      cmd: "pipx run -- pypyr style path={path} npm={npm} lint=False"
+
+  - name: pypyr.steps.shell
+    run: "{lint}"
+    in:
+      cmd: "pipx run -- pypyr lint path={path} npm={npm} stats={stats}"
+
+  - name: pypyr.steps.shell
+    run: "{test}"
+    in:
+      cmd: "pipx run -- pypyr test path={path} lint=False stats={stats}"
+
+  - name: pypyr.steps.shell
+    run: "{integration}"
+    in:
+      cmd: "pipx run -- pypyr test path={path} lint=False integration=True stats=False"
