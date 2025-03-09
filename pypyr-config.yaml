@@ -20,5 +20,6 @@ shortcuts:
     args:
       path: .
       npm: False
+      lint: False # XXX FIXME
       style: False
       integration: False

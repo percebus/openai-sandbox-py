@@ -4,7 +4,7 @@ import pandas
 from dotenv import dotenv_values
 from openai.embeddings_utils import cosine_similarity
 
-from src.open_ai.libs import api, env, printing
+from open_ai.libs import api, env, printing
 
 ENV = {
     **dotenv_values(".env"),  # Common config

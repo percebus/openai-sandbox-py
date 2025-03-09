@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.core.agent.native import NativeAgentBase
-from src.open_ai.semantickernel.plugins.native.math import MathPlugin
+from open_ai.semantickernel.core.agent.native import NativeAgentBase
+from open_ai.semantickernel.plugins.native.math import MathPlugin
 
 
 @dataclass

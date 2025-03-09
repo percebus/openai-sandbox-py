@@ -5,7 +5,7 @@ from dotenv import dotenv_values
 from redis.commands.search.query import Query
 from redis.exceptions import ResponseError
 
-from src.open_ai.libs import api, cache, env
+from open_ai.libs import api, cache, env
 
 ENV = {
     **dotenv_values(".env"),  # Common config

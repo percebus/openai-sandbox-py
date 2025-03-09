@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.semantickernel.core.agent.semantic import SemanticAgentBase
-from src.open_ai.semantickernel.core.function.provider import FunctionsProvier
-from src.open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
+from open_ai.semantickernel.core.agent.semantic import SemanticAgentBase
+from open_ai.semantickernel.core.function.provider import FunctionsProvier
+from open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
 
 
 # SRC: https://github.com/microsoft/semantic-kernel/blob/main/python/README.md

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.core.plugin.semantic import SemanticPluginBase
+from open_ai.semantickernel.core.plugin.semantic import SemanticPluginBase
 
 
 @dataclass

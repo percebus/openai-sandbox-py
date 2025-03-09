@@ -1,15 +1,15 @@
 import inspect
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.core.base import KernelBase
-from src.open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
-from src.open_ai.semantickernel.functions.semantic import (
+from open_ai.semantickernel.core.base import KernelBase
+from open_ai.semantickernel.core.function.semantic import SemanticFunctionBase
+from open_ai.semantickernel.functions.semantic import (
     summarize_1_line,
     summarize_five_words,
 )
 
 # TODO dynamically load all modules in
-# from src.open_ai.semantickernel.functions.semantic
+# from open_ai.semantickernel.functions.semantic
 modules = [
     summarize_1_line,
     summarize_five_words,

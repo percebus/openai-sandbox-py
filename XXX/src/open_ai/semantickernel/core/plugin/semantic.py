@@ -1,7 +1,7 @@
 from abc import ABC
 from dataclasses import dataclass, field
 
-from src.open_ai.semantickernel.core.base import KernelBase
+from open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass

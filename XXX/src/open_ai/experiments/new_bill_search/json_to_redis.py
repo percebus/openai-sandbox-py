@@ -6,7 +6,7 @@ from redis.commands.search.field import TextField, VectorField
 from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.exceptions import ResponseError
 
-from src.open_ai.libs import cache, env, vectors
+from open_ai.libs import cache, env, vectors
 
 ENV = {
     **dotenv_values(".env"),  # Common config

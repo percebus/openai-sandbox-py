@@ -4,7 +4,7 @@ import openai
 import requests
 from openai.embeddings_utils import get_embedding
 
-from src.open_ai.libs import printing
+from open_ai.libs import printing
 
 
 def config_openai(config: dict) -> None:

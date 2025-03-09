@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 
 from semantic_kernel import KernelFunctionBase
 
-from src.open_ai.semantickernel.core.base import KernelBase
+from open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass

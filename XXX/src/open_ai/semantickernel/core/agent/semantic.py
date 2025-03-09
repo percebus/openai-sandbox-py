@@ -3,9 +3,9 @@ from dataclasses import dataclass, field
 
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-from src.open_ai.config.configuration import Configuration
-from src.open_ai.config.settings import Settings
-from src.open_ai.semantickernel.core.base import KernelBase
+from open_ai.config.configuration import Configuration
+from open_ai.config.settings import Settings
+from open_ai.semantickernel.core.base import KernelBase
 
 
 @dataclass

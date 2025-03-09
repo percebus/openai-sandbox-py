@@ -4,7 +4,7 @@ import pandas
 import tiktoken
 from dotenv import dotenv_values
 
-from src.open_ai.libs import api, env, printing, strings
+from open_ai.libs import api, env, printing, strings
 
 ENV = {
     **dotenv_values(".env"),  # Common config

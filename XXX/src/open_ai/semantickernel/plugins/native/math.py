@@ -6,7 +6,7 @@ from semantic_kernel.plugin_definition.kernel_function_context_parameter_decorat
 )
 from semantic_kernel.plugin_definition.kernel_function_decorator import kernel_function
 
-from src.open_ai.semantickernel.core.plugin.native import NativePluginBase
+from open_ai.semantickernel.core.plugin.native import NativePluginBase
 
 
 class MathPlugin(NativePluginBase):
