@@ -1,8 +1,10 @@
-import redis
+from typing import Any
+
+from redis import Redis
 
 
-def createRedis(config: dict):
-    return redis.Redis(
+def createRedis(config: dict[str, Any]) -> Redis:
+    return Redis(
         host=config["REDIS_HOST"],
         port=config["REDIS_PORT"],
         password=config["REDIS_PASSWORD"],

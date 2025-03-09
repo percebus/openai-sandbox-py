@@ -1,0 +1,14 @@
+context_parser: pypyr.parser.keyvaluepairs
+steps:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "= pypyr clean =================================================="
+  - name: pypyr.steps.default
+    comment: set default values for optional cli inputs
+    in:
+      defaults:
+        path: .
+
+  - name: pypyr.steps.shell
+    in:
+      cmd: "pipx run -- pyclean {path}"

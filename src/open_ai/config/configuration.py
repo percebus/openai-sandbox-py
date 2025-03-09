@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from src.open_ai.config.settings import Settings
+from open_ai.config.settings import Settings
 
 
 @dataclass

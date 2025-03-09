@@ -26,13 +26,19 @@ tiktoken = "^0.4.0"
 [tool.poetry.group.dev.dependencies]
 autoflake = "^2.2.1"
 black = "^24.1.0"
-isort = "^5.13.2"
-pre-commit = "^3.6.0"
-pyclean = "^2.7.6"
+pyhamcrest = "^2.1.0"
 pylint = "^2.17.4"
 pyright = "^1.1.348"
+pytest = "^8.3.5"
+pytest-asyncio = "^0.25.3"
+pytest-bdd = "^8.1.0"
+pytest-cov = "^6.0.0"
 pytest-dotenv = "^0.5.2"
 ruff = "^0.1.14"
+setuptools = "^76.0.0"
+
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
 
 [tool.autoflake]
 check = true
@@ -42,16 +48,21 @@ line-length = 150
 target-version = ["py311"]
 
 [tool.pyright]
+venvPath = "."
+venv = ".venv"
 defineConstant = { DEBUG = true }
+typeCheckingMode = "strict"
 include = ["src"]
-# strict = ["src"]  # TODO: enable strict mode
-# stubPath = "src/stubs" # TODO?
-# ignore = ["src/oldstuff"] # NOTE what is the difference between exclude and ignore?
+strict = ["src"]
+stubPath = "typings"
 exclude = [
-    "**/node_modules",
-    "**/bower_components",
-    "**/.venv",
+    ".venv",
+    "notebooks",
+    "typings",
     "**/__pycache__",
+    "**/node_modules",
+    "tests/**/test*.py",
+    "XXX",
 ]
 
 [build-system]

@@ -1,32 +1,52 @@
 line-length = 150
 indent-width = 4
+show-fixes = true
+exclude = [
+    ".venv",
+    ".pytest_cache",
+    "typings",
+    "notebooks",
+    "XXX",
+]
 
 # Assume Python 3.11
 target-version = "py311"
 
 [format]
-# Like Black, use double quotes for strings.
+
+# Like Black:
+# use double quotes for strings.
 quote-style = "double"
 
-# Like Black, indent with spaces, rather than tabs.
+# Like Black:
+# indent with spaces, rather than tabs.
 indent-style = "space"
 
-# Like Black, respect magic trailing commas.
+# Like Black:
+# respect magic trailing commas.
 skip-magic-trailing-comma = false
 
-# Like Black, automatically detect the appropriate line ending.
+# Like Black:
+# automatically detect the appropriate line ending.
 line-ending = "auto"
 
 
 [lint]
 select = [
-    "F",  # Pyflakes
-    "E",  # a subset of the pycodestyle
-    "I"  # isort
+    "F",   # Pyflakes
+    "E",   # pycodestyle
+    "I",   # isort
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "W",   # warning
+    "PL",  # PyLint
 ]
+
+# Additional rules
+extend-select = ["C4", "SIM", "TCH"]
 
 fixable = ["ALL"]
 ignore = [
     "TD",  # TODO
-    "D1",  # Missing docstring
+    "D1",  # Missing docstrings
 ]

@@ -12,6 +12,7 @@ bash _scripts/setup.ba.sh
 
 poetry install
 python -m pip install -e .
+python -m pip freeze
 
 set +x
 set +e

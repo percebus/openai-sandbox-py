@@ -1,0 +1,45 @@
+context_parser: pypyr.parser.keyvaluepairs
+steps:
+  - name: pypyr.steps.echo
+    in:
+      echoMe: = pypyr test ================================================
+  - name: pypyr.steps.default
+    comment: set default values for optional cli inputs
+    in:
+      defaults:
+        npm: True
+        path: .
+        lint: True
+        stats: False
+        integration: False
+        markers: "not integration"
+        PYTEST_CLI_ARGS: ""
+
+  - name: pypyr.steps.shell
+    run: "{lint}"
+    in:
+      cmd: "pypyr lint path={path} npm={npm} stats={stats}"
+
+  - name: pypyr.steps.call
+    in:
+      call: test
+
+test:
+  - name: pypyr.steps.set
+    run: "{stats}"
+    in:
+      set:
+        PYTEST_CLI_ARGS: "--cov-report=term-missing"
+
+  - name: pypyr.steps.set
+    run: "{integration}"
+    in:
+      set:
+        markers: integration
+
+  - name: pypyr.steps.echo
+    in:
+      echoMe: "=== pytest:{markers} ======================================="
+  - name: pypyr.steps.shell
+    in:
+      cmd: poetry run pytest {PYTEST_CLI_ARGS} -m "{markers}"

@@ -4,6 +4,15 @@ on:
   push:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
+env:
+  PYRIGHT_PYTHON_FORCE_VERSION: latest
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+  security-events: write
+
 jobs:
   verify:
     name: Verify
@@ -18,4 +27,19 @@ jobs:
       - uses: percebus/github-actions-poetry/.github/actions/poetry_self_add_plugins@main
       - uses: percebus/github-actions-poetry/.github/actions/poetry_install@main
 
+      - name: pip install .
+        run: pip install .
+
       - uses: percebus/github-actions-pip/.github/actions/pip_freeze@main
+
+      # TODO
+      # - name: pypyr lint
+      #   run: pipx run -- pypyr lint stats=True
+
+      - name: pypyr test
+        run: pipx run -- pypyr ci lint=False
+
+      - uses: percebus/github-actions-testing/.github/actions/junit@main
+        with:
+          tests_name: "" # disables actions/test-reporter. It doesn't like pytest's junit format
+          files_pattern: test-junit.xml
