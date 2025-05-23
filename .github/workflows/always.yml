@@ -3,6 +3,9 @@ name: "[C]ontinuous [I]ntegration"
 on:
   push:
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 env:
   PYRIGHT_PYTHON_FORCE_VERSION: latest
@@ -21,7 +24,7 @@ jobs:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
       - uses: percebus/github-actions-python/.github/actions/setup@main
 
-      - uses: percebus/github-actions-pip/.github/actions/pip-upgrade@main
+      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
       - uses: percebus/github-actions-pipx/.github/actions/pipx_install@main
 
       - uses: percebus/github-actions-poetry/.github/actions/poetry_self_add_plugins@main
@@ -30,7 +33,7 @@ jobs:
       - name: pip install .
         run: pip install .
 
-      - uses: percebus/github-actions-pip/.github/actions/pip_freeze@main
+      - uses: percebus/github-actions-pip/.github/actions/freeze@main
 
       # TODO
       # - name: pypyr lint
