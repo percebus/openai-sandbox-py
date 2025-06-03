@@ -27,8 +27,8 @@ jobs:
       - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
       - uses: percebus/github-actions-pipx/.github/actions/pipx_install@main
 
-      - uses: percebus/github-actions-poetry/.github/actions/poetry_self_add_plugins@main
-      - uses: percebus/github-actions-poetry/.github/actions/poetry_install@main
+      - uses: percebus/github-actions-poetry/.github/actions/self_add_plugins@main
+      - uses: percebus/github-actions-poetry/.github/actions/install@main
 
       - name: pip install .
         run: pip install .
